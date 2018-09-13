@@ -38,12 +38,18 @@ body {
 }
 
 .about-us-home {
-  background-color: #676767;
+  background-color: #fff;
   height: 500px;
   padding-top: 100px;
+  border-bottom: solid 3px #878887;
 }
 .title-about {
-  font-size: 34px;
+  font-size: 38px;
+  color: #000;
+  text-align: center;
+}
+.title-designer {
+  font-size: 38px;
   color: #fff;
   text-align: center;
 }
@@ -53,19 +59,61 @@ body {
   text-align: center;
   margin-bottom: 40px;
 }
-.sub-title-about {
-  font-size: 22px;
+.title-designer {
+  font-size: 34px;
   color: #fff;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.title-jewelry {
+  font-size: 34px;
+  color: #000;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.sub-title-about {
+  font-size: 28px;
+  color: #000;
+  text-align: center;
+  margin-top: 20px;
+}
+.title-init {
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+}
+.title-init-jewelry {
+  font-size: 16px;
+  color: #000;
   text-align: center;
   margin-top: 20px;
 }
 .content-about {
   margin: 0 auto;
-  font-size: 16px;
-  color: #fff;
+  font-size: 14px;
+  color: #000;
   text-align: center;
   margin-top: 20px;
   width: 70%;
+  line-height: 28px;
+}
+.content-designer {
+  margin: 0 auto;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+  width: 30%;
+  line-height: 28px;
+}
+.content-jewelry {
+  margin: 0 auto;
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+  margin-top: 20px;
+  width: 60%;
   line-height: 28px;
 }
 .home-business {
@@ -296,7 +344,8 @@ input.txtsearch {
     background: #fff;
 }
 .carousel-inner {
-  height: 500px;
+  height: 700px;
+  background-color: #000;
 }
 #site-header .site-navbar {
     height: 60px;
