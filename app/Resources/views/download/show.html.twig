@@ -1,0 +1,43 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Download</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th width="100">Id</th>
+                <td>{{ download.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ download.title | raw }}</td>
+            </tr>
+            <tr>
+                <th>Story</th>
+                <td>{{ download.overview | raw }}</td>
+            </tr>
+            <tr>
+                <th>File</th>
+                <td><a href="{{ asset('web/uploads/download/') }}{{ download.file }}" target="_blank" download>{{ download.title }}</a></td>
+            </tr>
+            <tr>
+                <th>Datetime</th>
+                <td>{% if download.dateTime %}{{ download.dateTime|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>By</th>
+                <td>{{ download.postedBy | capitalize }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+            <a href="{{ path('download_index') }}">Back to the list</a><br>
+
+            <a href="{{ path('download_edit', { 'id': download.id }) }}">Edit</a><br>
+
+            {{ form_start(delete_form) }}
+                <input type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?')" value="Delete">
+            {{ form_end(delete_form) }}
+
+{% endblock %}

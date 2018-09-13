@@ -1,0 +1,20 @@
+AppBundle\Entity\Csrimage:
+ type: entity
+ table: csrimage
+ repositoryClass: AppBundle\Repository\CsrimageRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  largeImage:
+   type: string
+  createdAt:
+   type: datetime
+ manyToOne:
+  csr:
+   targetEntity: Csr
+   inversedBy: csr_image
+   joinColumn:
+    name: csr_id
+    referencedColumnName: id

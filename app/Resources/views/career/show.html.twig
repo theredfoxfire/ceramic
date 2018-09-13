@@ -1,0 +1,33 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+<div class="container">
+            <a href="{{ path('career_index') }}">Back to the list</a>
+    <h1>Career</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th width="100">Id</th>
+                <td>{{ career.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ career.name }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ career.email }}</td>
+            </tr>
+            <tr>
+                <th>Subject</th>
+                <td>{{ career.title }}</td>
+            </tr>
+            <tr>
+                <th>Message</th>
+                <td>{{ career.message | raw }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+AppBundle\Entity\Year:
+ type: entity
+ table: year
+ repositoryClass: AppBundle\Repository\YearRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  year:
+   type: string
+ oneToMany:
+  month:
+   targetEntity: Month
+   orphanRemoval: true
+   mappedBy: year

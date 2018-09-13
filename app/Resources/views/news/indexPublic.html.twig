@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Page Content -->
+    <div class="container">
+        <div class="news-media">
+            <h1>NEWS & MEDIA</h1>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="media-archive">
+                        {% for y in year %}
+                            <div class="ac">
+                                <input class="ac-input" id="ac-{{ y.year }}-1" name="ac-{{ y.year }}-1" type="checkbox">
+                                <label class="ac-label year-label" for="ac-{{ y.year }}-1">{{ y.year }}</label>
+                                <article class="ac-text">
+                                    {% for m in y.monthnews %}
+                                        <div class="ac-sub">
+                                            <a href="{{ path('monthnews_show', {'id': m.id}) }}"><label class="ac-label">{{ m.name | upper }}</label></a>
+                                        </div>
+                                    {% endfor %}
+                                </article>
+                                <!--/ac-text-->
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <ul class="media-list">
+                    {% for news in pagination %}
+                        <li>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-5">
+                                    <div class="media-image">
+                                        <img src="{{ asset('web/uploads/news/') }}{{ news.largeImage }}" class="img-responsive" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-7">
+                                    <div class="media-content">
+                                        <div class="media-heading">
+                                            <a href="{{ path('news_show_public', {'id': news.id}) }}">{{ news.title | upper }}</a>
+                                        </div>
+                                        <div class="media-time">
+                                            {% if news.dateTime %}{{ news.dateTime|date('d.m.Y') }} | {{ news.dateTime|date('H.i') }}{% endif %}
+                                        </div>
+                                        <div class="media-author">
+                                            by: {{ news.postedBy | capitalize }}
+                                        </div>
+                                        <div class="entry">
+                                            {{ news.subtitle | raw }}
+                                        </div>
+                                        <div class="tool">
+                                            <a href="{{ path('news_show_public', {'id': news.id}) }}" >Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            {{ knp_pagination_render(pagination) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

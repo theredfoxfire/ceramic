@@ -1,0 +1,13 @@
+AppBundle\Entity\Video:
+ type: entity
+ table: video
+ repositoryClass: AppBundle\Repository\VideoRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  largeImage:
+   type: string
+  createdAt:
+   type: datetime

@@ -1,0 +1,34 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Logo</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ logo.id }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img src="{{ asset('web/uploads/logo/') }}{{ logo.largeImage }}" style="margin: 0 auto;" height="100" width="100"></td>
+            </tr>
+            <tr>
+                <th>Createdat</th>
+                <td>{% if logo.createdAt %}{{ logo.createdAt|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('logo_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('logo_edit', { 'id': logo.id }) }}">Edit</a>
+        </li>
+    </ul>
+    {{ form_start(delete_form) }}
+        <button type="submit" class="btn btn-large btn-danger" onclick="return confirm('Are you sure you want to delete this item?')"> Delete</button>
+    {{ form_end(delete_form) }}
+{% endblock %}

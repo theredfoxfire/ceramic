@@ -1,0 +1,27 @@
+AppBundle\Entity\Download:
+ type: entity
+ table: download
+ repositoryClass: AppBundle\Repository\DownloadRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  title:
+   type: string
+  overview:
+   type: text
+  file:
+   type: string
+   nullable: true
+  dateTime:
+   type: datetime
+  postedBy:
+   type: string
+ manyToOne:
+  month:
+   targetEntity: Month
+   inversedBy: download
+   joinColumn:
+    name: month_id
+    referencedColumnName: id

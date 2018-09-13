@@ -1,0 +1,29 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Business Unites</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th width="200">Id</th>
+                <td>{{ unite.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ unite.title }}</td>
+            </tr>
+            <tr>
+                <th>Business Category</th>
+                <td>{{ unite.category.category }}</td>
+            </tr>
+            <tr>
+                <th>Story</th>
+                <td>{{ unite.story | raw}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+            <a href="{{ path('unites_index') }}">Back to the list</a>
+{% endblock %}

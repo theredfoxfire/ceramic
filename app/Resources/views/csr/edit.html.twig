@@ -1,0 +1,30 @@
+{% extends 'baseAdmin.html.twig' %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{% block body %}
+    <h1>CSR</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}<br />
+        <label>Add another image: (Max Size 2MB)</label>
+
+        <div id="form_file">
+            <input type="file" id="buimage_largeImage" name="csr[anotherImage1]" /><br>
+        </div>
+        <input type="button" value="Click for more file form input" onClick="addInput('form_file', 'file_count');"><br ><br>
+        <input type="hidden" value="1" name="csr[fileCount]" id="file_count"><br>
+        <input type="submit" class="btn btn-info" value="Save Update" />
+    {{ form_end(form) }}
+
+            <br><a href="{{ path('csr_index') }}">Back to the list</a><br><br>
+
+<script>
+var counter = 1;
+function addInput(divName, fileCount){
+      var newdiv = document.createElement('div');
+      newdiv.innerHTML = `<input type="file" id="buimage_largeImage" name="csr[anotherImage${counter + 1}]"/><br>`;
+      document.getElementById(fileCount).value = `${counter + 1}`;
+      document.getElementById(divName).appendChild(newdiv);
+      counter++;
+}
+</script>
+{% endblock %}

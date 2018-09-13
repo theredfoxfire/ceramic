@@ -1,0 +1,11 @@
+AppBundle\Entity\Quote:
+ type: entity
+ table: quote
+ repositoryClass: AppBundle\Repository\QuoteRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  quote:
+   type: text

@@ -1,0 +1,34 @@
+unites_index:
+    path:     /admin/unites/
+    defaults: { _controller: "AppBundle:Unites:index" }
+    methods:  GET
+
+unites_show:
+    path:     /admin/unites/{id}/show
+    defaults: { _controller: "AppBundle:Unites:show" }
+    methods:  GET
+
+unites_search:
+    path:     /unites/search
+    defaults: { _controller: "AppBundle:Unites:search" }
+    methods:  GET
+
+unites_show_public:
+    path:     /unites/{id}/show
+    defaults: { _controller: "AppBundle:Unites:showPublic" }
+    methods:  GET
+
+unites_new:
+    path:     /admin/unites/new
+    defaults: { _controller: "AppBundle:Unites:new" }
+    methods:  [GET, POST]
+
+unites_edit:
+    path:     /admin/unites/{id}/edit
+    defaults: { _controller: "AppBundle:Unites:edit" }
+    methods:  [GET, POST]
+
+unites_delete:
+    path:     /admin/unites/{id}/delete
+    defaults: { _controller: "AppBundle:Unites:delete" }
+    methods:  DELETE

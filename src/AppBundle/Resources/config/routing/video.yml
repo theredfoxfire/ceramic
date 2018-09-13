@@ -1,0 +1,24 @@
+video_index:
+    path:     /admin/videos/
+    defaults: { _controller: "AppBundle:Video:index" }
+    methods:  GET
+
+video_show:
+    path:     /admin/videos/{id}/show
+    defaults: { _controller: "AppBundle:Video:show" }
+    methods:  GET
+
+video_new:
+    path:     /admin/videos/new
+    defaults: { _controller: "AppBundle:Video:new" }
+    methods:  [GET, POST]
+
+video_edit:
+    path:     /admin/videos/{id}/edit
+    defaults: { _controller: "AppBundle:Video:edit" }
+    methods:  [GET, POST]
+
+video_delete:
+    path:     /admin/videos/{id}/delete
+    defaults: { _controller: "AppBundle:Video:delete" }
+    methods:  DELETE

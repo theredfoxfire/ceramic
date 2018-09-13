@@ -1,0 +1,25 @@
+AppBundle\Entity\Month:
+ type: entity
+ table: month
+ repositoryClass: AppBundle\Repository\MontRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  month:
+   type: string
+  name:
+   type: string
+ oneToMany:
+  download:
+   targetEntity: Download
+   orphanRemoval: true
+   mappedBy: month
+ manyToOne:
+  year:
+   targetEntity: Year
+   inversedBy: month
+   joinColumn:
+    name: year_id
+    referencedColumnName: id

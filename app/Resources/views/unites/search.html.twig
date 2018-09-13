@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Page Content -->
+    <div class="container">
+        <div class="news-media">
+            <h1>SEARCH</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="media-list">
+                    {% for unites in pagination %}
+                        <li>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12">
+                                    <div class="media-content">
+                                        <div class="media-heading">
+                                            <a href="{{ path('unites_show_public', {'id': unites.id}) }}">{{ unites.title | upper }}</a>
+                                        </div>
+                                        <div class="entry">
+                                            {{ unites.story [0:300] | raw}}
+                                        </div>
+                                        <div class="tool">
+                                            <a href="{{ path('unites_show_public', {'id': unites.id}) }}" >Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            {{ knp_pagination_render(pagination) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- Page Content -->
+<div class="container">
+    <div class="people">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Message</h2>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row pt-md">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 profile">
+                                <div class="img-box">
+                                  <img src="{{ asset('web/uploads/peoples/') }}{{ peoples.largeImage }}" class="img-responsive">
+
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 profile">
+                                <h1 style="text-align: left;">{{ peoples.name | upper }}</h1>
+                                <h2 style="text-align: left;">{{ peoples.position | upper }}</h2>
+                                <br />
+                                {{ peoples.story | raw }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container -->
+{% endblock %}

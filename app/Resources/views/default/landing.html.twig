@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" type="image/png" href="{{ asset('web/credo/img/favicon.png') }}"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>GLOBAL GROUP</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="{{ asset('web/credo/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('web/credo/css/font-awesome.min.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('web/credo/css/owl-carousel/owl.carousel.css') }}">
+        <link href="{{ asset('web/credo/css/styles.css') }}" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+      <div class="stripe"></div>
+      <div class="landingTop"></div>
+      <div class="landing">
+          {% for video in videos %}
+            <a href="{{ path('homepage') }}">
+              <img src="{{ asset('web/uploads/video/') }}{{ video.largeImage }}" class="img-responsive" style="margin: 0 auto; min-height: 550px; max-height: 550px;" />
+            </a>
+          {% endfor %}
+          <div class="text-center"><a class="landing-link" href="{{ path('homepage') }}">OPEN</a></div>
+      </div>
+      <div class="landingBottom"></div>
+    </body>
+</html>

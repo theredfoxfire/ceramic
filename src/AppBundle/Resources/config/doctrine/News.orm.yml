@@ -1,0 +1,29 @@
+AppBundle\Entity\News:
+ type: entity
+ table: news
+ repositoryClass: AppBundle\Repository\NewsRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  title:
+   type: string
+  subtitle:
+   type: string
+  story:
+   type: text
+  largeImage:
+   type: string
+   nullable: true
+  dateTime:
+   type: datetime
+  postedBy:
+   type: string
+ manyToOne:
+  monthnews:
+   targetEntity: Monthnews
+   inversedBy: news
+   joinColumn:
+    name: monthnews_id
+    referencedColumnName: id

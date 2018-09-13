@@ -1,0 +1,27 @@
+{% extends 'baseAdmin.html.twig' %}
+{% form_theme edit_form 'bootstrap_3_layout.html.twig' %}
+{% block body %}
+    <h1>About us edit</h1>
+    <a href="{{ path('aboutus_index') }}">Back to the list</a> <br /><br />
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}<br />
+        <label>Add more image:</label>
+
+        <div id="form_file">
+            <input type="file" id="buimage_largeImage" name="aboutus[anotherImage1]" /><br>
+        </div>
+        <input type="button" value="Click for more file form input" onClick="addInput('form_file', 'file_count');"><br ><br>
+        <input type="hidden" value="1" name="aboutus[fileCount]" id="file_count"><br>
+        <input type="submit" value="Save Edit" class="btn btn-info"/><br><br>
+    {{ form_end(edit_form) }}
+    <script>
+    var counter = 1;
+    function addInput(divName, fileCount){
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = `<input type="file" id="buimage_largeImage" name="aboutus[anotherImage${counter + 1}]"/><br>`;
+          document.getElementById(fileCount).value = `${counter + 1}`;
+          document.getElementById(divName).appendChild(newdiv);
+          counter++;
+    }
+    </script>
+{% endblock %}

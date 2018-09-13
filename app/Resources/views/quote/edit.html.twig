@@ -1,0 +1,14 @@
+{% extends 'baseAdmin.html.twig' %}
+{% form_theme edit_form 'bootstrap_3_layout.html.twig' %}
+{% block body %}
+    <h1>Quote edit</h1>
+    <a href="{{ path('quote_index') }}">Back to the list</a> <br /><br />
+    {{ quote.quote | raw }}<br>
+
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}<br />
+        <input type="submit" value="Save Edit" class="btn btn-info"/>
+    {{ form_end(edit_form) }}
+
+{% endblock %}

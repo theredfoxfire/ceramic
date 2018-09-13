@@ -1,0 +1,24 @@
+buimage_index:
+    path:     /admin/buimage/
+    defaults: { _controller: "AppBundle:Buimage:index" }
+    methods:  GET
+
+buimage_show:
+    path:     /admin/buimage/{id}/show
+    defaults: { _controller: "AppBundle:Buimage:show" }
+    methods:  GET
+
+buimage_new:
+    path:     /admin/buimage/new
+    defaults: { _controller: "AppBundle:Buimage:new" }
+    methods:  [GET, POST]
+
+buimage_edit:
+    path:     /admin/buimage/{id}/edit
+    defaults: { _controller: "AppBundle:Buimage:edit" }
+    methods:  [GET, POST]
+
+buimage_delete:
+    path:     /admin/buimage/{id}/delete
+    defaults: { _controller: "AppBundle:Buimage:delete" }
+    methods:  DELETE

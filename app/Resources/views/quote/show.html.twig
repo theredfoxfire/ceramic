@@ -1,0 +1,30 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Quote</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ quote.id }}</td>
+            </tr>
+            <tr>
+                <th>Quote</th>
+                <td>{{ quote.quote }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('quote_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('quote_edit', { 'id': quote.id }) }}">Edit</a>
+        </li>
+    </ul>
+    {{ form_start(delete_form) }}
+        <button type="submit" class="btn btn-large btn-danger" onclick="return confirm('Are you sure you want to delete this item?')"> Delete</button>
+    {{ form_end(delete_form) }}
+{% endblock %}

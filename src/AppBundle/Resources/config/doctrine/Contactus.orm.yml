@@ -1,0 +1,17 @@
+AppBundle\Entity\Contactus:
+ type: entity
+ table: contactus
+ repositoryClass: AppBundle\Repository\ContactusRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  name:
+   type: string
+  email:
+   type: string
+  title:
+   type: string
+  message:
+   type: text

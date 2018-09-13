@@ -1,0 +1,32 @@
+AppBundle\Entity\Unites:
+ type: entity
+ table: unites
+ repositoryClass: AppBundle\Repository\UnitesRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  title:
+   type: string
+  subtitle:
+   type: string
+  story:
+   type: text
+  largeImage:
+   type: string
+  webUrl:
+   type: string
+   nullable: true
+ oneToMany:
+  unites_image:
+   targetEntity: Buimage
+   orphanRemoval: true
+   mappedBy: unites
+ manyToOne:
+  category:
+   targetEntity: Category
+   inversedBy: unites
+   joinColumn:
+    name: category_id
+    referencedColumnName: id

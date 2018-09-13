@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<div class="people">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>NEWS AND MEDIA</h1>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row pt-md">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 profile">
+                            <div class="img-box">
+                              <img src="{{ asset('web/uploads/news/') }}{{ news.largeImage }}" class="img-responsive">
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 profile">
+                            <h1 style="text-align: left;">{{ news.title }}</h1>
+                            <h2 style="text-align: left;">{{ news.subtitle }}</h2>
+                            {{ news.story | raw }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

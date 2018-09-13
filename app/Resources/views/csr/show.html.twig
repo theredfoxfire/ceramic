@@ -1,0 +1,25 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+    <h1>CSR</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th width="200">Id</th>
+                <td>{{ csr.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ csr.title }}</td>
+            </tr>
+            <tr>
+                <th>Story</th>
+                <td>{{ csr.story | raw}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+            <a href="{{ path('csr_index') }}">Back to the list</a>
+{% endblock %}

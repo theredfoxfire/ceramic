@@ -1,0 +1,20 @@
+AppBundle\Entity\Aboutusimage:
+ type: entity
+ table: aboutusimage
+ repositoryClass: AppBundle\Repository\AboutusimageRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  largeImage:
+   type: string
+  createdAt:
+   type: datetime
+ manyToOne:
+  aboutus:
+   targetEntity: Aboutus
+   inversedBy: aboutus_image
+   joinColumn:
+    name: aboutus_id
+    referencedColumnName: id

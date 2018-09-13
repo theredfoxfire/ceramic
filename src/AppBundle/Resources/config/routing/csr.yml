@@ -1,0 +1,29 @@
+csr_index:
+    path:     /admin/csr/
+    defaults: { _controller: "AppBundle:Csr:index" }
+    methods:  GET
+
+csr_show:
+    path:     /admin/csr/{id}/show
+    defaults: { _controller: "AppBundle:Csr:show" }
+    methods:  GET
+
+csr_show_public:
+    path:     /csr/{id}/show
+    defaults: { _controller: "AppBundle:Csr:showPublic" }
+    methods:  GET
+
+csr_new:
+    path:     /admin/csr/new
+    defaults: { _controller: "AppBundle:Csr:new" }
+    methods:  [GET, POST]
+
+csr_edit:
+    path:     /admin/csr/{id}/edit
+    defaults: { _controller: "AppBundle:Csr:edit" }
+    methods:  [GET, POST]
+
+csr_delete:
+    path:     /admin/csr/{id}/delete
+    defaults: { _controller: "AppBundle:Csr:delete" }
+    methods:  DELETE

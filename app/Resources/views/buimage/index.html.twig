@@ -1,0 +1,47 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+    <h1>Image Busines Unit list</h1>
+    {{ knp_pagination_render(pagination) }}
+    <a class="pull-right btn btn-small" href="{{ path('buimage_new') }}"><i class="fa fa-plus-square-o"></i>&nbsp;Upload a new Image of Busines Units</a><br /><br />
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Largeimage</th>
+                <th>Createdat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for buimage in pagination %}
+            <tr>
+                <td><a href="{{ path('buimage_show', { 'id': buimage.id }) }}">{{ pagination.getPaginationData.firstItemNumber + loop.index - 1 }}</a></td>
+                <td><img src="{{ asset('web/uploads/buimage/') }}{{ buimage.largeImage }}" height="100" width="100"></td>
+                <td>{% if buimage.createdAt %}{{ buimage.createdAt|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <a class="btn btn-small" href="{{ path('buimage_edit', { 'id': buimage.id }) }}">
+                      <button type="submit" class="btn btn-small">
+                        <i class="fa fa-pencil-square-o "></i>
+                        Edit
+                      </button>
+                    </a>
+                    {{ form_start(deleteForms[buimage.id]) }}
+                        <button type="submit" class="btn btn-small btn-danger" onclick="return confirm('Are you sure you want to delete this item?')">
+                            <i class="fa fa-trash-o"></i>
+                            Delete
+                        </button>
+                    {{ form_end(deleteForms[buimage.id]) }}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {# display navigation #}
+    {{ knp_pagination_render(pagination) }}
+    </div>
+</div>
+{% endblock %}

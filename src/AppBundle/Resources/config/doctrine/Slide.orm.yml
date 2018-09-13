@@ -1,0 +1,13 @@
+AppBundle\Entity\Slide:
+ type: entity
+ table: slide
+ repositoryClass: AppBundle\Repository\SlideRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  largeImage:
+   type: string
+  createdAt:
+   type: datetime

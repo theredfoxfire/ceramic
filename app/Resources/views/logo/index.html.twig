@@ -1,0 +1,47 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+    <h1>Logo list</h1>
+    {{ knp_pagination_render(pagination) }}
+    <a class="pull-right btn btn-small" href="{{ path('logo_new') }}"><i class="fa fa-plus-square-o"></i>&nbsp;Upload a new Logo of Business Unit</a><br /><br />
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Largeimage</th>
+                <th>Createdat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for logo in pagination %}
+            <tr>
+                <td><a href="{{ path('logo_show', { 'id': logo.id }) }}">{{ pagination.getPaginationData.firstItemNumber + loop.index - 1 }}</a></td>
+                <td><img src="{{ asset('web/uploads/logo/') }}{{ logo.largeImage }}" height="100" width="100"></td>
+                <td>{% if logo.createdAt %}{{ logo.createdAt|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <a class="btn btn-small" href="{{ path('logo_edit', { 'id': logo.id }) }}">
+                      <button type="submit" class="btn btn-small">
+                        <i class="fa fa-pencil-square-o "></i>
+                        Edit
+                      </button>
+                    </a>
+                    {{ form_start(deleteForms[logo.id]) }}
+                        <button type="submit" class="btn btn-small btn-danger" onclick="return confirm('Are you sure you want to delete this item?')">
+                            <i class="fa fa-trash-o"></i>
+                            Delete
+                        </button>
+                    {{ form_end(deleteForms[logo.id]) }}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {# display navigation #}
+    {{ knp_pagination_render(pagination) }}
+    </div>
+</div>
+{% endblock %}

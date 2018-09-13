@@ -1,0 +1,11 @@
+{% extends 'baseAdmin.html.twig' %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{% block body %}
+    <h1>Download creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-info" type="submit" >Post </button>
+    {{ form_end(form) }}
+            <a href="{{ path('download_index') }}">Back to the list</a>
+{% endblock %}

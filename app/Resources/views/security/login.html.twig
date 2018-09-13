@@ -1,0 +1,100 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="{{ asset('web/credo/img/favicon.png') }}"/>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>GLOBAL GROUP</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="{{ asset('web/credo/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('web/credo/css/font-awesome.min.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('web/credo/css/owl-carousel/owl.carousel.css') }}">
+        <link href="{{ asset('web/credo/css/styles.css') }}" rel="stylesheet">
+        <link href="{{ asset('web/credo/css/sticky-footer.css') }}" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+      <div class="container">
+                          <div class="row">
+                              <div class="col-sm-8 col-sm-offset-2 text">
+                                  <h1>Welcome to Login Page</h1>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-6 col-sm-offset-3 form-box">
+                              	<div class="form-top">
+                              	{% if error %}
+                  								<div class='text-center alert alert-danger'><b>{{ error.messageKey|trans(error.messageData, 'security') }}</b></div>
+                  							{% endif %}
+                                  </div>
+                                  <div class="form-bottom">
+                								<form action="{{ path('security_login_check') }}" method="post" class="login-form">
+                									<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+      			                    	<div class="form-group">
+      			                    		<label for="form-username">Username</label>
+      			                        	<input type="text" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="Username..." class="form-username form-control">
+      			                        </div>
+      			                        <div class="form-group">
+      			                        	<label for="form-password">Password</label>
+      			                        	<input type="password" id="password" name="_password" required="required" placeholder="Password..." class="form-password form-control">
+      			                        </div>
+      			                        <button type="submit" class="btn btn-info">LOGIN!</button>
+      			                    </form>
+      		                    </div>
+                              </div>
+                          </div>
+             </div>
+             <footer class="footer">
+               <div class="developer">
+                   <div class="container">ALL RIGHTS RESERVED - GLOBAL GROUP©{{ "now"|date("Y") }}</div>
+               </div>
+             </footer>
+             <!-- jQuery Version 1.11.1 -->
+             <script src="{{ asset('web/credo/js/jquery.js') }}"></script>
+             <!-- Bootstrap Core JavaScript -->
+             <script src="{{ asset('web/credo/js/bootstrap.min.js') }}"></script>
+             <script src="{{ asset('web/credo/js/owl-carousel/owl.carousel.js') }}"></script>
+             <script type="text/javascript">
+                 $(document).ready(function() {
+                     var owl = $("#owl-demo");
+                     owl.owlCarousel({
+                         items: 6, //10 items above 1000px browser width
+                         itemsDesktop: [1000, 5], //5 items between 1000px and 901px
+                         itemsDesktopSmall: [900, 3], // betweem 900px and 601px
+                         itemsTablet: [600, 2], //2 items between 600 and 0
+                         itemsMobile: false, // itemsMobile disabled - inherit from itemsTablet option
+                         pagination: false,
+                         navigation: true,
+                         navigationText: [
+                             "<i class='fa fa-angle-left fa-5x'><\/i>",
+                             "<i class='fa fa-angle-right fa-5x'><\/i>"
+                         ],
+                         loop: true,
+                         autoPlay: true,
+                         autoPlayTimeout: 500,
+                         autoPlayHoverPause: true
+                     });
+                     // Custom Navigation Events
+                     $(".next").click(function() {
+                         owl.trigger('owl.next');
+                     })
+                     $(".prev").click(function() {
+                         owl.trigger('owl.prev');
+                     })
+                     $(".play").click(function() {
+                         owl.trigger('owl.play', 1000); //owl.play event accept autoPlay speed as second parameter
+                     })
+                     $(".stop").click(function() {
+                         owl.trigger('owl.stop');
+                     })
+                 });
+             </script>
+           </body>
+           </html>

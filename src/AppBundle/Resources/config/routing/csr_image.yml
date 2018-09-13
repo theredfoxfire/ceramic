@@ -1,0 +1,24 @@
+csrimage_index:
+    path:     /admin/csrimage/
+    defaults: { _controller: "AppBundle:Csrimage:index" }
+    methods:  GET
+
+csrimage_show:
+    path:     /admin/csrimage/{id}/show
+    defaults: { _controller: "AppBundle:Csrimage:show" }
+    methods:  GET
+
+csrimage_new:
+    path:     /admin/csrimage/new
+    defaults: { _controller: "AppBundle:Csrimage:new" }
+    methods:  [GET, POST]
+
+csrimage_edit:
+    path:     /admin/csrimage/{id}/edit
+    defaults: { _controller: "AppBundle:Csrimage:edit" }
+    methods:  [GET, POST]
+
+csrimage_delete:
+    path:     /admin/csrimage/{id}/delete
+    defaults: { _controller: "AppBundle:Csrimage:delete" }
+    methods:  DELETE

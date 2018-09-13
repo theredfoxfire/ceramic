@@ -1,0 +1,24 @@
+logo_index:
+    path:     /admin/logos/
+    defaults: { _controller: "AppBundle:Logo:index" }
+    methods:  GET
+
+logo_show:
+    path:     /admin/logos/{id}/show
+    defaults: { _controller: "AppBundle:Logo:show" }
+    methods:  GET
+
+logo_new:
+    path:     /admin/logos/new
+    defaults: { _controller: "AppBundle:Logo:new" }
+    methods:  [GET, POST]
+
+logo_edit:
+    path:     /admin/logos/{id}/edit
+    defaults: { _controller: "AppBundle:Logo:edit" }
+    methods:  [GET, POST]
+
+logo_delete:
+    path:     /admin/logos/{id}/delete
+    defaults: { _controller: "AppBundle:Logo:delete" }
+    methods:  DELETE

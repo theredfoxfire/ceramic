@@ -1,0 +1,24 @@
+slide_index:
+    path:     /admin/slides/
+    defaults: { _controller: "AppBundle:Slide:index" }
+    methods:  GET
+
+slide_show:
+    path:     /admin/slides/{id}/show
+    defaults: { _controller: "AppBundle:Slide:show" }
+    methods:  GET
+
+slide_new:
+    path:     /admin/slides/new
+    defaults: { _controller: "AppBundle:Slide:new" }
+    methods:  [GET, POST]
+
+slide_edit:
+    path:     /admin/slides/{id}/edit
+    defaults: { _controller: "AppBundle:Slide:edit" }
+    methods:  [GET, POST]
+
+slide_delete:
+    path:     /admin/slides/{id}/delete
+    defaults: { _controller: "AppBundle:Slide:delete" }
+    methods:  DELETE

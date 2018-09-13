@@ -1,0 +1,34 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+    <h1>About us</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th width="200">Id</th>
+                <td>{{ aboutus.id }}</td>
+            </tr>
+            <tr>
+                <th>Preword</th>
+                <td>{{ aboutus.preword | raw }}</td>
+            </tr>
+            <tr>
+                <th>About us</th>
+                <td>{{ aboutus.story | raw }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('aboutus_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('aboutus_edit', { 'id': aboutus.id }) }}">Edit</a>
+        </li>
+    </ul>
+    {{ form_start(delete_form) }}
+        <button type="submit" class="btn btn-large btn-danger" onclick="return confirm('Are you sure you want to delete this item?')"> Delete</button>
+    {{ form_end(delete_form) }}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Video</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th width="100">Id</th>
+                <td>{{ video.id }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img src="{{ asset('web/uploads/video/') }}{{ video.largeImage }}" height="100" width="100"></td>
+            </tr>
+            <tr>
+                <th>Createdat</th>
+                <td>{% if video.createdAt %}{{ video.createdAt|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="{{ path('video_index') }}">Back to the list</a><br>
+
+            <a href="{{ path('video_edit', { 'id': video.id }) }}">Edit</a><br>
+
+    {{ form_start(delete_form) }}
+        <button type="submit" class="btn btn-large btn-danger" onclick="return confirm('Are you sure you want to delete this item?')"> Delete</button>
+    {{ form_end(delete_form) }}
+{% endblock %}

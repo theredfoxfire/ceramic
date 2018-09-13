@@ -1,0 +1,24 @@
+quote_index:
+    path:     /admin/quote/
+    defaults: { _controller: "AppBundle:Quote:index" }
+    methods:  GET
+
+quote_show:
+    path:     /admin/quote/{id}/show
+    defaults: { _controller: "AppBundle:Quote:show" }
+    methods:  GET
+
+quote_new:
+    path:     /admin/quote/new
+    defaults: { _controller: "AppBundle:Quote:new" }
+    methods:  [GET, POST]
+
+quote_edit:
+    path:     /admin/quote/{id}/edit
+    defaults: { _controller: "AppBundle:Quote:edit" }
+    methods:  [GET, POST]
+
+quote_delete:
+    path:     /admin/quote/{id}/delete
+    defaults: { _controller: "AppBundle:Quote:delete" }
+    methods:  DELETE

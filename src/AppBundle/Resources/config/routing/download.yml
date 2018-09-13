@@ -1,0 +1,29 @@
+download_index:
+    path:     /admin/download/
+    defaults: { _controller: "AppBundle:Download:index" }
+    methods:  GET
+
+download_index_public:
+    path:     /download/
+    defaults: { _controller: "AppBundle:Download:indexPublic" }
+    methods:  GET
+
+download_show:
+    path:     /admin/download/{id}/show
+    defaults: { _controller: "AppBundle:Download:show" }
+    methods:  GET
+
+download_new:
+    path:     /admin/download/new
+    defaults: { _controller: "AppBundle:Download:new" }
+    methods:  [GET, POST]
+
+download_edit:
+    path:     /admin/download/{id}/edit
+    defaults: { _controller: "AppBundle:Download:edit" }
+    methods:  [GET, POST]
+
+download_delete:
+    path:     /admin/download/{id}/delete
+    defaults: { _controller: "AppBundle:Download:delete" }
+    methods:  DELETE

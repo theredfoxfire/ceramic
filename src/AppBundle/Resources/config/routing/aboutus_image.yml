@@ -1,0 +1,24 @@
+aboutusimage_index:
+    path:     /admin/aboutusimage/
+    defaults: { _controller: "AppBundle:Aboutusimage:index" }
+    methods:  GET
+
+aboutusimage_show:
+    path:     /admin/aboutusimage/{id}/show
+    defaults: { _controller: "AppBundle:Aboutusimage:show" }
+    methods:  GET
+
+aboutusimage_new:
+    path:     /admin/aboutusimage/new
+    defaults: { _controller: "AppBundle:Aboutusimage:new" }
+    methods:  [GET, POST]
+
+aboutusimage_edit:
+    path:     /admin/aboutusimage/{id}/edit
+    defaults: { _controller: "AppBundle:Aboutusimage:edit" }
+    methods:  [GET, POST]
+
+aboutusimage_delete:
+    path:     /admin/aboutusimage/{id}/delete
+    defaults: { _controller: "AppBundle:Aboutusimage:delete" }
+    methods:  DELETE

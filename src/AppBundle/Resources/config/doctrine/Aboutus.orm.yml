@@ -1,0 +1,21 @@
+AppBundle\Entity\Aboutus:
+ type: entity
+ table: aboutus
+ repositoryClass: AppBundle\Repository\AboutusRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  preword:
+   type: text
+  story:
+   type: text
+  largeImage:
+   type: string
+   nullable: true
+ oneToMany:
+  aboutus_image:
+   targetEntity: Aboutusimage
+   orphanRemoval: true
+   mappedBy: aboutus

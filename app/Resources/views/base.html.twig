@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" type="image/png" href="{{ asset('web/credo/img/favicon.png') }}"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>EMPORIO CERAMICS</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="{{ asset('web/credo/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('web/credo/css/font-awesome.min.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('web/credo/css/owl-carousel/owl.carousel.css') }}">
+        <link href="{{ asset('web/credo/css/styles.css') }}" rel="stylesheet">
+        <link href="{{ asset('web/credo/css/sticky-footer.css') }}" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+      <div class="stripe">
+        <div style="border-left: solid 2px #fff;padding:10px;">
+          <i class="fa fa-instagram" style="font-size: 16px;"></i>
+        </div>
+        <div style="border-left: solid 2px #fff;padding:10px;">
+          <i class="fa fa-facebook" style="font-size: 16px;"></i>
+        </div>
+        <div style="border-left: solid 2px #fff;padding:10px;">
+          <i class="fa fa-twitter" style="font-size: 16px;"></i>
+        </div>
+        <div style="border-left: solid 2px #fff;border-right: solid 2px #fff;padding:10px;">
+          <span style="font-size: 10px;">CONTACT US</span>
+        </div>
+        <div class="search_div pull-right">
+            <form name="form_search" id="form_search" method="get" action="{{ path('unites_search') }}">
+                <input placeholder="SEARCH HERE ..." class="txtsearch" name="search" id="txtsearch" value="" type="text">
+                <button type="submit" class="btn btn-search btn-danger"> <i class="fa fa-search"></i></button>
+            </form>
+        </div>
+      </div>
+      <div class="top-header hidden-xs">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                     <h1 style="text-align:center;">EMPORIO CERAMICS</h1>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Navigation -->
+      <header id="site-header">
+          <nav class="navbar site-navbar navbar-default">
+              <div class="container">
+                  <div class="navbar-header visible-xs">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      </button>
+                  </div>
+                  <div id="navbar" class="collapse navbar-collapse" style="text-align: center;">
+                      <ul class="nav navbar-nav">
+                          <li class="divider-vertical"><a href="{{ path('homepage') }}">INTERIORS</a></li>
+                          <li class="divider-vertical"><a href="{{ path('homepage') }}">NEW ARRIVALS</a></li>
+                          <li class="divider-vertical"><a href="{{ path('homepage') }}">IN STOCK</a></li>
+                          <li class="divider-vertical"><a href="{{ path('homepage') }}">FURNITURE</a></li>
+                          <li class="divider-vertical"><a href="{{ path('homepage') }}">LIGHTING</a></li>
+                          <li class="divider-vertical"><a href="{{ path('homepage') }}">DECOR</a></li>
+                          <li class="divider-vertical"><a href="{{ path('homepage') }}">GIFTS</a></li>
+                          <li class="divider-vertical"><a href="{{ path('homepage') }}">RUGS</a></li>
+                          <li class="divider-vertical"><a href="{{ path('homepage') }}">OUTDOR</a></li>
+                          <li class="divider-vertical"><a href="{{ path('homepage') }}">FABRIC & WALLPAPER</a></li>
+                      </ul>
+                  </div>
+                  <!--/.nav-collapse -->
+                  <!--/.nav-collapse -->
+              </div>
+          </nav>
+      </header>
+        {% block body %}{% endblock %}
+        <div class="developer">
+            <div class="container-fluid">
+              <div class="col-md-3">
+                <h5>ABC</h5>
+                <h6>News</h6>
+                <h6>Custom</h6>
+                <h6>Private</h6>
+              </div>
+              <div class="col-md-3">
+                <h5>FOLLOW US</h5>
+                <h6>Instagram</h6>
+                <h6>Facebook</h6>
+                <h6>Twitter</h6>
+              </div>
+              <div class="col-md-3">
+                <h6>CONTACT US</h6>
+                <h6>Live Chat</h6>
+                <h6>Phone: 654-35468-03</h6>
+                <h6>Fax: 654-35267-98</h6>
+                <h6>Email</h6>
+              </div>
+              <div class="col-md-3">
+                <h5>VISIT US</h5>
+                <h6>Monday - Saturday: 10 AM - 5 PM</h6>
+                <h6>(By Appointment)</h6>
+                <h6>Schedule a showroom visit</h6>
+                <h6>8471 Melrose Avenue</h6>
+                <h6>West Hollywood, CA 90069</h6>
+
+              </div>
+            </div>
+            <div class="container" style="margin-top: 20px;">ALL RIGHTS RESERVED - GLOBAL GROUP©{{ "now"|date("Y") }}</div>
+        </div>
+        <!-- jQuery Version 1.11.1 -->
+        <script src="{{ asset('web/credo/js/jquery.js') }}"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{{ asset('web/credo/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('web/credo/js/owl-carousel/owl.carousel.js') }}"></script>
+        <script type="text/javascript">
+          $('li.divider-vertical.dropdown.mega-dropdown a').on('click', function (event) {
+            $(this).parent().toggleClass("open");
+          });
+          $('body').on('click', function (e) {
+              if (!$('li.divider-vertical.dropdown.mega-dropdown').is(e.target)
+                  && $('li.divider-vertical.dropdown.mega-dropdown').has(e.target).length === 0
+                  && $('.open').has(e.target).length === 0
+              ) {
+                  $('li.divider-vertical.dropdown.mega-dropdown').removeClass('open');
+              }
+          });
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var owl = $("#owl-demo");
+                owl.owlCarousel({
+                    items: 4, //10 items above 1000px browser width
+                    itemsDesktop: [1000, 5], //5 items between 1000px and 901px
+                    itemsDesktopSmall: [900, 3], // betweem 900px and 601px
+                    itemsTablet: [600, 2], //2 items between 600 and 0
+                    itemsMobile: false, // itemsMobile disabled - inherit from itemsTablet option
+                    pagination: false,
+                    navigation: true,
+                    navigationText: [
+                        "<img src='{{ asset('web/credo/img/left.png') }}' class='arrow-big'>",
+                        "<img src='{{ asset('web/credo/img/right.png') }}' class='arrow-big'>"
+                    ],
+                    loop: true,
+                    autoPlay: true,
+                    autoPlayTimeout: 500,
+                    autoPlayHoverPause: true
+                });
+                // Custom Navigation Events
+                $(".next").click(function() {
+                    owl.trigger('owl.next');
+                })
+                $(".prev").click(function() {
+                    owl.trigger('owl.prev');
+                })
+                $(".play").click(function() {
+                    owl.trigger('owl.play', 1000); //owl.play event accept autoPlay speed as second parameter
+                })
+                $(".stop").click(function() {
+                    owl.trigger('owl.stop');
+                })
+            });
+        </script>
+    </body>
+</html>

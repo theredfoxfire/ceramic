@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" type="image/png" href="{{ asset('web/credo/img/favicon.png') }}"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>GLOBAL GROUP</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="{{ asset('web/credo/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('web/credo/css/font-awesome.min.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('web/credo/css/owl-carousel/owl.carousel.css') }}">
+        <link href="{{ asset('web/credo/css/styles.css') }}" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ path('adminHomepage') }}">GLOBAL GROUP</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="{{ path('adminHomepage') }}">Home</a></li>
+              <li>
+                <a href="{{ path('unites_index') }}">Bussines Units</a>
+              </li>
+              <li><a href="{{ path('career_index') }}">Carier</a></li>
+              <li><a href="{{ path('contactus_index') }}">Contact Us</a></li>
+              <li><a href="{{ path('csr_index') }}">CSR</a></li>
+              <li><a href="{{ path('download_index') }}">Downloads</a></li>
+              <li><a href="{{ path('aboutus_index') }}">About Us</a></li>
+              <li>
+                <a href="{{ path('news_index') }}">News & Media</a>
+              </li>
+              <li>
+                <a href="{{ path('peoples_index') }}">Peoples</a>
+              </li>
+              <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Others...</b></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="{{ path('slide_index') }}">Home Slides Show</a>
+                  </li>
+                  <li>
+                    <a href="{{ path('logo_index') }}">Logo Business Units</a>
+                  </li>
+                  <li><a href="{{ path('video_index') }}">Landing GIF Video</a></li>
+                  <li><a href="{{ path('quote_index') }}">Home Quotes</a></li>
+                  <li><a href="{{ path('overview_index') }}">Contact Us Overview</a></li>
+                  <li><a href="{{ path('category_index') }}">Business Category</a></li>
+                  <li><a href="{{ path('users_index') }}">Users Management</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="{{ path('security_logout') }}">LOGOUT</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <br /><br /><br />
+        {% block body %}{% endblock %}
+      </div>
+      <div class="container-content"></div>
+        <footer class="footer">
+          <div class="developer">
+              <div class="container">ALL RIGHTS RESERVED - GLOBAL GROUP©{{ "now"|date("Y") }}</div>
+          </div>
+        </footer>
+        <!-- jQuery Version 1.11.1 -->
+        <script src="{{ asset('web/credo/js/jquery.js') }}"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{{ asset('web/credo/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('web/credo/js/owl-carousel/owl.carousel.js') }}"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var owl = $("#owl-demo");
+                owl.owlCarousel({
+                    items: 6, //10 items above 1000px browser width
+                    itemsDesktop: [1000, 5], //5 items between 1000px and 901px
+                    itemsDesktopSmall: [900, 3], // betweem 900px and 601px
+                    itemsTablet: [600, 2], //2 items between 600 and 0
+                    itemsMobile: false, // itemsMobile disabled - inherit from itemsTablet option
+                    pagination: false,
+                    navigation: true,
+                    navigationText: [
+                        "<i class='fa fa-angle-left fa-5x'><\/i>",
+                        "<i class='fa fa-angle-right fa-5x'><\/i>"
+                    ],
+                    loop: true,
+                    autoPlay: true,
+                    autoPlayTimeout: 500,
+                    autoPlayHoverPause: true
+                });
+                // Custom Navigation Events
+                $(".next").click(function() {
+                    owl.trigger('owl.next');
+                })
+                $(".prev").click(function() {
+                    owl.trigger('owl.prev');
+                })
+                $(".play").click(function() {
+                    owl.trigger('owl.play', 1000); //owl.play event accept autoPlay speed as second parameter
+                })
+                $(".stop").click(function() {
+                    owl.trigger('owl.stop');
+                })
+            });
+        </script>
+        <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+        <script>tinymce.init({ selector:'textarea' });</script>
+    </body>
+</html>

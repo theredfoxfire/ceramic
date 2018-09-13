@@ -1,0 +1,4 @@
+month_show:
+    path:     /download/month/{id}/show
+    defaults: { _controller: "AppBundle:Month:show" }
+    methods:  GET

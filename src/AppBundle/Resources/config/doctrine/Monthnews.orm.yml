@@ -1,0 +1,25 @@
+AppBundle\Entity\Monthnews:
+ type: entity
+ table: monthnews
+ repositoryClass: AppBundle\Repository\MonthnewsRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  month:
+   type: string
+  name:
+   type: string
+ oneToMany:
+  news:
+   targetEntity: News
+   orphanRemoval: true
+   mappedBy: monthnews
+ manyToOne:
+  yearnews:
+   targetEntity: Yearnews
+   inversedBy: monthnews
+   joinColumn:
+    name: yearnews_id
+    referencedColumnName: id

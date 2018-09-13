@@ -1,0 +1,29 @@
+aboutus_index:
+    path:     /admin/aboutus/
+    defaults: { _controller: "AppBundle:Aboutus:index" }
+    methods:  GET
+
+aboutus_show:
+    path:     /admin/aboutus/{id}/show
+    defaults: { _controller: "AppBundle:Aboutus:show" }
+    methods:  GET
+
+aboutus_show_public:
+    path:     /aboutus/{id}/show
+    defaults: { _controller: "AppBundle:Aboutus:showPublic" }
+    methods:  GET
+
+aboutus_new:
+    path:     /admin/aboutus/new
+    defaults: { _controller: "AppBundle:Aboutus:new" }
+    methods:  [GET, POST]
+
+aboutus_edit:
+    path:     /admin/aboutus/{id}/edit
+    defaults: { _controller: "AppBundle:Aboutus:edit" }
+    methods:  [GET, POST]
+
+aboutus_delete:
+    path:     /admin/aboutus/{id}/delete
+    defaults: { _controller: "AppBundle:Aboutus:delete" }
+    methods:  DELETE

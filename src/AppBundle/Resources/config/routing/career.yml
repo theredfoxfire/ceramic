@@ -1,0 +1,29 @@
+career_index:
+    path:     /admin/career/
+    defaults: { _controller: "AppBundle:Career:index" }
+    methods:  GET
+
+career_show:
+    path:     /admin/career/{id}/show
+    defaults: { _controller: "AppBundle:Career:show" }
+    methods:  GET
+
+career_sucess:
+    path:     /career/success
+    defaults: { _controller: "AppBundle:Career:sucess" }
+    methods:  GET
+
+career_new:
+    path:     /career/new
+    defaults: { _controller: "AppBundle:Career:new" }
+    methods:  [GET, POST]
+
+career_edit:
+    path:     /admin/career/{id}/edit
+    defaults: { _controller: "AppBundle:Career:edit" }
+    methods:  [GET, POST]
+
+career_delete:
+    path:     /admin/career/{id}/delete
+    defaults: { _controller: "AppBundle:Career:delete" }
+    methods:  DELETE

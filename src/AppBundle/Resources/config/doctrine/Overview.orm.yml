@@ -1,0 +1,19 @@
+AppBundle\Entity\Overview:
+ type: entity
+ table: overview
+ repositoryClass: AppBundle\Repository\OverviewRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  overview:
+   type: text
+  largeImage:
+   type: string
+  mainAddress:
+   type: text
+  longitude:
+   type: text
+  latitude:
+   type: text

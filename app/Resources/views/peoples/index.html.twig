@@ -1,0 +1,48 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Peoples list</h1>
+    {{ knp_pagination_render(pagination) }}
+    <a class="pull-right btn btn-small" href="{{ path('peoples_new') }}"><i class="fa fa-plus-square-o"></i>&nbsp;Posting a peoples</a><br /><br />
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Story</th>
+                <th>mage</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for peoples in pagination %}
+            <tr>
+                <td><a href="{{ path('peoples_show', { 'id': peoples.id }) }}">{{ pagination.getPaginationData.firstItemNumber + loop.index - 1 }}</a></td>
+                <td><a href="{{ path('peoples_show', { 'id': peoples.id }) }}">{{ peoples.name | raw }}</a></td>
+                <td>{{ peoples.position | raw }}</td>
+                <td>{{ peoples.story | raw }}</td>
+                <td><img src="{{ asset('web/uploads/peoples/') }}{{ peoples.largeImage }}" height="400" width="400"></td>
+                <td>
+                    <a class="btn btn-small" href="{{ path('peoples_edit', { 'id': peoples.id }) }}">
+                      <button type="submit" class="btn btn-small">
+                        <i class="fa fa-pencil-square-o "></i>
+                        Edit
+                      </button>
+                    </a>
+                    {% if peoples.id != 1 %}
+                      {{ form_start(deleteForms[peoples.id]) }}
+                          <button type="submit" class="btn btn-small btn-danger" onclick="return confirm('Are you sure you want to delete this item?')">
+                              <i class="fa fa-trash-o"></i>
+                              Delete
+                          </button>
+                      {{ form_end(deleteForms[peoples.id]) }}
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {# display navigation #}
+    {{ knp_pagination_render(pagination) }}
+{% endblock %}

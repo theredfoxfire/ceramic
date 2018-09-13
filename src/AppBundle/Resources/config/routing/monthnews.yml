@@ -1,0 +1,4 @@
+monthnews_show:
+    path:     /news/month/{id}/show
+    defaults: { _controller: "AppBundle:Monthnews:show" }
+    methods:  GET

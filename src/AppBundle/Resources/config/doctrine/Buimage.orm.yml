@@ -1,0 +1,20 @@
+AppBundle\Entity\Buimage:
+ type: entity
+ table: buimage
+ repositoryClass: AppBundle\Repository\BuimageRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  largeImage:
+   type: string
+  createdAt:
+   type: datetime
+ manyToOne:
+  unites:
+   targetEntity: Unites
+   inversedBy: unites_image
+   joinColumn:
+    name: unites_id
+    referencedColumnName: id

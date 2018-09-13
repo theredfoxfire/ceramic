@@ -1,0 +1,52 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+    <h1>News</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ news.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ news.title | raw }}</td>
+            </tr>
+            <tr>
+                <th>Subtitle</th>
+                <td>{{ news.subtitle | raw }}</td>
+            </tr>
+            <tr>
+                <th>Story</th>
+                <td>{{ news.story | raw }}</td>
+            </tr>
+            <tr>
+                <th>Largeimage</th>
+                <td><img src="{{ asset('web/uploads/news/') }}{{ news.largeImage }}" height="400" width="400"></td>
+            </tr>
+            <tr>
+                <th>Datetime</th>
+                <td>{% if news.dateTime %}{{ news.dateTime|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>By</th>
+                <td>{{ news.postedBy }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('news_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('news_edit', { 'id': news.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

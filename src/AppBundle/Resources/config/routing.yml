@@ -1,0 +1,61 @@
+app_year:
+    resource: "@AppBundle/Resources/config/routing/year.yml"
+    prefix:   /year
+
+app_career:
+    resource: "@AppBundle/Resources/config/routing/career.yml"
+    prefix:   /
+app_contactus:
+    resource: "@AppBundle/Resources/config/routing/contactus.yml"
+    prefix:   /
+app_csr:
+    resource: "@AppBundle/Resources/config/routing/csr.yml"
+    prefix:   /
+app_download:
+    resource: "@AppBundle/Resources/config/routing/download.yml"
+    prefix:   /
+app_news:
+    resource: "@AppBundle/Resources/config/routing/news.yml"
+    prefix:   /
+app_peoples:
+    resource: "@AppBundle/Resources/config/routing/peoples.yml"
+    prefix:   /
+app_unites:
+    resource: "@AppBundle/Resources/config/routing/unites.yml"
+    prefix:   /
+app_slide:
+    resource: "@AppBundle/Resources/config/routing/slide.yml"
+    prefix:   /
+app_logo:
+    resource: "@AppBundle/Resources/config/routing/logo.yml"
+    prefix:   /
+app_quote:
+    resource: "@AppBundle/Resources/config/routing/quote.yml"
+    prefix:   /
+app_aboutus:
+    resource: "@AppBundle/Resources/config/routing/aboutus.yml"
+    prefix:   /
+app_overview:
+    resource: "@AppBundle/Resources/config/routing/overview.yml"
+    prefix:   /
+app_aboutus_image:
+    resource: "@AppBundle/Resources/config/routing/aboutus_image.yml"
+    prefix:   /
+app_bu_image:
+    resource: "@AppBundle/Resources/config/routing/bu_image.yml"
+    prefix:   /
+app_users:
+    resource: "@AppBundle/Resources/config/routing/users.yml"
+    prefix:   /
+app_category:
+    resource: "@AppBundle/Resources/config/routing/category.yml"
+    prefix:   /
+app_month:
+    resource: "@AppBundle/Resources/config/routing/month.yml"
+    prefix:   /
+app_month_news:
+    resource: "@AppBundle/Resources/config/routing/monthnews.yml"
+    prefix:   /
+app_video:
+    resource: "@AppBundle/Resources/config/routing/video.yml"
+    prefix:   /

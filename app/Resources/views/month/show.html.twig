@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Page Content -->
+    <div class="container">
+        <div class="news-media">
+            <h1>DOWNLOAD</h1>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="media-archive">
+                        {% for y in year %}
+                            <div class="ac">
+                                <input class="ac-input" id="ac-{{ y.year }}-1" name="ac-{{ y.year }}-1" type="checkbox">
+                                <label class="ac-label year-label" for="ac-{{ y.year }}-1">{{ y.year }}</label>
+                                <article class="ac-text">
+                                    {% for m in y.month %}
+                                        <div class="ac-sub">
+                                            <a href="{{ path('month_show', {'id': m.id}) }}"><label class="ac-label">{{ m.name | upper }}</label></a>
+                                        </div>
+                                    {% endfor %}
+                                </article>
+                                <!--/ac-text-->
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <ul class="media-list">
+                    {% for download in pagination %}
+                        <li>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12">
+                                    <div class="media-content">
+                                        <div class="media-heading">
+                                            <a href="#">{{ download.title | upper }}</a>
+                                        </div>
+                                        <div class="media-time">
+                                            {% if download.dateTime %}{{ download.dateTime|date('d.m.Y') }} | {{ download.dateTime|date('H.i') }}{% endif %}
+                                        </div>
+                                        <div class="media-author">
+                                            by: {{ download.postedBy | capitalize }}
+                                        </div>
+                                        <div class="entry">
+                                            {{ download.overview | raw }}
+                                        </div>
+                                        <div class="tool">
+                                            <a href="{{ asset('web/uploads/download/') }}{{ download.file }}" target="_blank" download>Download</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            {{ knp_pagination_render(pagination) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
