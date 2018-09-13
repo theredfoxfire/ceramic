@@ -259,6 +259,7 @@ input.txtsearch {
     letter-spacing: 1px;
     color: #fff;
     background: #000;
+    width: 180px;
 }
 
 .btn-search {
