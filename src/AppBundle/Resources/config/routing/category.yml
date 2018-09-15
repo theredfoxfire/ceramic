@@ -22,3 +22,8 @@ category_delete:
     path:     /admin/category/{id}/delete
     defaults: { _controller: "AppBundle:Category:delete" }
     methods:  DELETE
+
+category_show_public:
+    path:     /category/{id}/show
+    defaults: { _controller: "AppBundle:Category:showPublic" }
+    methods:  GET

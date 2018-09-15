@@ -81,6 +81,17 @@ class CategoryController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
+    /**
+     * Finds and displays a Category entity.
+     *
+     */
+    public function showPublicAction(Category $category)
+    {
+        return $this->render('category/showPublic.html.twig', array(
+            'category' => $category,
+            'categories' => $this->get('app.services.getCategories')->getCategories(),
+        ));
+    }
 
     /**
      * Displays a form to edit an existing Category entity.

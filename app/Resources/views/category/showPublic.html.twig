@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<!-- /.container -->
+<div style="padding-top: 30px;padding-bottom: 20px;">
+  <p class="tag-line2" style="text-align:center;">{{ category.category }}</p>
+</div>
+  <div class="container">
+    <div class="col-md-3">
+      <div class="row">
+        <h4>COLOR</h4>
+        <div>
+          <input type="checkbox" value="animal-print"> Animal Print
+        </div>
+        <div>
+          <input type="checkbox" value="animal-print"> Black
+        </div>
+        <div>
+          <input type="checkbox" value="animal-print"> Blue
+        </div>
+        <div>
+          <input type="checkbox" value="animal-print"> Brown
+        </div>
+        <div>
+          <input type="checkbox" value="animal-print"> Burgundy
+        </div>
+        <div>
+          <input type="checkbox" value="animal-print"> Gold
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      {% for n in [1,2,3,4] %}
+        <div class="row" style="padding-bottom: 30px;">
+          <div class="col-md-4">
+            <img src="{{ asset('web/credo/img/thumb1.png') }}" alt="">
+            <div style="width: 70%; text-align: center;">
+              <p>
+                LOREM IPSUM DOLOR<br>
+                Lorem ipsum dolor sit amet, consectetuer<br>
+                Rp. 120.000
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img src="{{ asset('web/credo/img/thumb2.png') }}" alt="">
+            <div style="width: 70%; text-align: center;">
+              <p>
+                LOREM IPSUM DOLOR<br>
+                Lorem ipsum dolor sit amet, consectetuer<br>
+                Rp. 120.000
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img src="{{ asset('web/credo/img/thumb3.png') }}" alt="">
+            <div style="width: 70%; text-align: center;">
+              <p>
+                LOREM IPSUM DOLOR<br>
+                Lorem ipsum dolor sit amet, consectetuer<br>
+                Rp. 120.000
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

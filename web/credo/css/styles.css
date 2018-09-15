@@ -652,9 +652,9 @@ p {
 .wrapper-with-margin {
     margin: 0 50px;
 }
-.arrow-big {
+.arrow-left {
   height: 90px;
-  width: auto;
+  width: auto; 
 }
 
 h4 {

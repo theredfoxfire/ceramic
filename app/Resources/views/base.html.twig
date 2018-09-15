@@ -65,16 +65,11 @@
                   </div>
                   <div id="navbar" class="collapse navbar-collapse" style="text-align: center;">
                       <ul class="nav navbar-nav">
-                          <li class="divider-vertical"><a href="{{ path('homepage') }}">INTERIORS</a></li>
-                          <li class="divider-vertical"><a href="{{ path('homepage') }}">NEW ARRIVALS</a></li>
-                          <li class="divider-vertical"><a href="{{ path('homepage') }}">IN STOCK</a></li>
-                          <li class="divider-vertical"><a href="{{ path('homepage') }}">FURNITURE</a></li>
-                          <li class="divider-vertical"><a href="{{ path('homepage') }}">LIGHTING</a></li>
-                          <li class="divider-vertical"><a href="{{ path('homepage') }}">DECOR</a></li>
-                          <li class="divider-vertical"><a href="{{ path('homepage') }}">GIFTS</a></li>
-                          <li class="divider-vertical"><a href="{{ path('homepage') }}">RUGS</a></li>
-                          <li class="divider-vertical"><a href="{{ path('homepage') }}">OUTDOR</a></li>
-                          <li class="divider-vertical"><a href="{{ path('homepage') }}">FABRIC & WALLPAPER</a></li>
+                          {% for category in categories.categories %}
+                              <li class="divider-vertical">
+                                  <a href="{{ path('category_show_public', { 'id': category.id }) }}" aria-expanded="true" aria-controls="collapse{{loop.index}}">{{ category.category | upper }}</a>
+                              </li>
+                          {% endfor %}
                       </ul>
                   </div>
                   <!--/.nav-collapse -->
@@ -146,8 +141,8 @@
                     pagination: false,
                     navigation: true,
                     navigationText: [
-                        "<img src='{{ asset('web/credo/img/left.png') }}' class='arrow-big'>",
-                        "<img src='{{ asset('web/credo/img/right.png') }}' class='arrow-big'>"
+                        "<img src='{{ asset('web/credo/img/left.png') }}' style='margin-right: -200px;' class='arrow-left'>",
+                        "<img src='{{ asset('web/credo/img/right.png') }}' style='margin-left: -200px;' class='arrow-big'>"
                     ],
                     loop: true,
                     autoPlay: true,
