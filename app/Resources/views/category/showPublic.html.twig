@@ -7,61 +7,149 @@
   <p class="tag-line2" style="text-align:center;">{{ category.category }}</p>
 </div>
   <div class="container">
-    <div class="col-md-3">
+    <div class="col-md-3" style="padding-right: 30px;">
       <div class="row">
-        <h4>COLOR</h4>
-        <div>
-          <input type="checkbox" value="animal-print"> Animal Print
+        <div style="display: flex; flex-direction: row; justify-content: space-between;align-items:center;">
+          <div>
+            <p style="font-size: 16px;">COLOR</p>
+          </div>
+          <div>
+            <p style="font-size: 11px;">CLEAR</p>
+          </div>
         </div>
         <div>
-          <input type="checkbox" value="animal-print"> Black
+          <input type="checkbox" name="color" value="animal-print"> Animal Print
         </div>
         <div>
-          <input type="checkbox" value="animal-print"> Blue
+          <input type="checkbox" name="color" value="black"> Black
         </div>
         <div>
-          <input type="checkbox" value="animal-print"> Brown
+          <input type="checkbox" name="color" value="blue"> Blue
         </div>
         <div>
-          <input type="checkbox" value="animal-print"> Burgundy
+          <input type="checkbox" name="color" value="brown"> Brown
         </div>
         <div>
-          <input type="checkbox" value="animal-print"> Gold
+          <input type="checkbox" name="color" value="burgundy"> Burgundy
         </div>
+        <div>
+          <input type="checkbox" name="color" value="gold"> Gold
+        </div>
+        <div>
+          <input type="checkbox" name="color" value="gray"> Gray
+        </div>
+        <div>
+          <input type="checkbox" name="color" value="green"> Green
+        </div>
+        <div>
+          <input type="checkbox" name="color" value="metalic"> Metalic
+        </div>
+        <div>
+          <input type="checkbox" name="color" value="neutrals"> Neutrals
+        </div>
+        <div>
+          <input type="checkbox" name="color" value="orange"> Orange
+        </div>
+        <div>
+          <input type="checkbox" name="color" value="pink"> Pink
+        </div>
+        <div>
+          <input type="checkbox" name="color" value="purple"> Purple
+        </div>
+        <div>
+          <input type="checkbox" name="color" value="red"> Red
+        </div>
+        <div>
+          <input type="checkbox" name="color" value="silver"> Silver
+        </div>
+        <div>
+          <input type="checkbox" name="color" value="white"> White
+        </div>
+        <div>
+          <input type="checkbox" name="color" value="yellow"> Yellow
+        </div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div style="display: flex; flex-direction: row; justify-content: space-between;align-items:center;">
+          <div>
+            <p style="font-size: 16px;">SIZE</p>
+          </div>
+          <div>
+            <p style="font-size: 11px;">CLEAR</p>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div>
+            <input type="checkbox" name="size" value="20"> 20
+          </div>
+          <div>
+            <input type="checkbox" name="size" value="30"> 30
+          </div>
+          <div>
+            <input type="checkbox" name="size" value="40"> 40
+          </div>
+          <div>
+            <input type="checkbox" name="size" value="50"> 50
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div>
+            <input type="checkbox" name="size" value="20"> 20
+          </div>
+          <div>
+            <input type="checkbox" name="size" value="30"> 30
+          </div>
+          <div>
+            <input type="checkbox" name="size" value="40"> 40
+          </div>
+          <div>
+            <input type="checkbox" name="size" value="50"> 50
+          </div>
+        </div>
+      </div>
+      <div style="padding-top: 40px;display:flex;justify-content: center;">
+        <button type="submit" class="btn btn-warning">FILTER</button>
       </div>
     </div>
     <div class="col-md-9">
       {% for n in [1,2,3,4] %}
         <div class="row" style="padding-bottom: 30px;">
+          <a href="{{ path('unites_show_public', { 'id': 2 }) }}" class="thumb-link">
+            <div class="col-md-4">
+              <img src="{{ asset('web/credo/img/thumb1.png') }}" alt="">
+              <div style="width: 70%; text-align: center;">
+                <p>
+                  LOREM IPSUM DOLOR<br>
+                  Lorem ipsum dolor sit amet, consectetuer<br>
+                  IDR 120.000
+                </p>
+              </div>
+            </a>
+          </div>
           <div class="col-md-4">
-            <img src="{{ asset('web/credo/img/thumb1.png') }}" alt="">
-            <div style="width: 70%; text-align: center;">
-              <p>
-                LOREM IPSUM DOLOR<br>
-                Lorem ipsum dolor sit amet, consectetuer<br>
-                Rp. 120.000
-              </p>
+            <a href="{{ path('unites_show_public', { 'id': 2 }) }}" class="thumb-link">
+              <img src="{{ asset('web/credo/img/thumb2.png') }}" alt="">
+              <div style="width: 70%; text-align: center;">
+                <p>
+                  LOREM IPSUM DOLOR<br>
+                  Lorem ipsum dolor sit amet, consectetuer<br>
+                  IDR 120.000
+                </p>
+              </a>
             </div>
           </div>
           <div class="col-md-4">
-            <img src="{{ asset('web/credo/img/thumb2.png') }}" alt="">
-            <div style="width: 70%; text-align: center;">
-              <p>
-                LOREM IPSUM DOLOR<br>
-                Lorem ipsum dolor sit amet, consectetuer<br>
-                Rp. 120.000
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <img src="{{ asset('web/credo/img/thumb3.png') }}" alt="">
-            <div style="width: 70%; text-align: center;">
-              <p>
-                LOREM IPSUM DOLOR<br>
-                Lorem ipsum dolor sit amet, consectetuer<br>
-                Rp. 120.000
-              </p>
-            </div>
+            <a href="{{ path('unites_show_public', { 'id': 2 }) }}" class="thumb-link">
+              <img src="{{ asset('web/credo/img/thumb3.png') }}" alt="">
+              <div style="width: 70%; text-align: center;">
+                <p>
+                  LOREM IPSUM DOLOR<br>
+                  Lorem ipsum dolor sit amet, consectetuer<br>
+                  IDR 120.000
+                </p>
+              </div>
+            </a>
           </div>
         </div>
       {% endfor %}

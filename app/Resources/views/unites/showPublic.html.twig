@@ -1,49 +1,40 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div id="carousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel" data-slide-to="0" class="active"></li>
-            {% for image in unite.unitesimage %}
-                <li data-target="#carousel" data-slide-to="{{ loop.index }}"></li>
-            {% endfor %}
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-              <img src="{{ asset('web/uploads/unites/') }}{{ unite.largeImage }}" class="img-slider" alt="...">
-          </div>
-          {% for image in unite.unitesimage %}
-              <div class="item">
-                  <img src="{{ asset('web/uploads/buimage/') }}{{ image.largeImage }}" class="img-slider" alt="...">
-              </div>
-          {% endfor %}
-        </div>
-        <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-        </a>
+
+<!-- /.container -->
+  <div style="padding-top: 30px;padding-bottom: 20px;padding-left: 30px;">
+    <p class="tag-line2" style="text-align:left;">FASHION RINGS</p>
+  </div>
+  <div class="container">
+    <div class="col-md-6" style="padding: 30px;display:flex; justify-content:center; align-items: center;">
+      <img src="{{ asset('web/credo/img/detail.png') }}" style="width: auto; height: 400px;">
     </div>
-    <!-- Page Content -->
-    <div class="container">
-        <div class="business-unit">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="page-title">{{ unite.title | upper }} <p class="lead">{{ unite.subtitle | upper }}</p></div>
-                </div>
-                <div class="col-md-6">
-                  {{ unite.story | raw }}
-                    <div class="readmore">
-                        <a href="{{ unite.weburl }}" target="_blank" class="web-link">WEBSITE <i class="fa fa-arrow-circle-o-right fa-lg arrow-link"></i></a>
-                    </div>
-                </div>
-            </div>
+    <div class="col-md-6" style="display:flex; align-items: flex-end;height: 400px;">
+      <div>
+        <h4>EMILE</h4>
+        <p><b>LOREM IPSUM DOLOR SIT AMET</b></p>
+        <p style="width: 40%;">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus morbi ut mie. Lorem ipsum dolor sit amet.
+        </p>
+        <p><b>IDR 100.800</b></p>
+        <div style="display:flex; flex-direction: row;">
+          <div class="img-thumb-ceramic" style="background-image: url({{ asset('web/credo/img/thumb1.png') }});"></div>
+          <div class="img-thumb-ceramic" style="background-image: url({{ asset('web/credo/img/thumb2.png') }});"></div>
+          <div class="img-thumb-ceramic" style="background-image: url({{ asset('web/credo/img/thumb3.png') }});"></div>
         </div>
+      </div>
     </div>
-    <!-- /.container -->
+  </div>
+  <section class="img-detail-bottom" style="background-image: url({{ asset('web/credo/img/interior-design.jpg') }});">
+  </section>
+  <section id="philosphi-home">
+    <h6>OUR PHILOSOPHI</h6>
+    <p class="content-pilo">
+      We empower our clients.<br>
+      We offer you transparent, reliable, and comparable information to do your due diligence.
+      The perfect engagement ring does not already exist in a display. It should be custom made
+      with you, for you.
+    </p>
+  </section>
 {% endblock %}

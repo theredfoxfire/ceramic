@@ -33,7 +33,9 @@
           <i class="fa fa-twitter" style="font-size: 16px;"></i>
         </div>
         <div style="border-left: solid 2px #fff;border-right: solid 2px #fff;padding:10px;">
-          <span style="font-size: 10px;">CONTACT US</span>
+          <a href="{{ path('contactus_new') }}" style="color: #fff; text-decoration: none;">
+              <span style="font-size: 10px;">CONTACT US</span>
+          </a>
         </div>
         <div class="search_div pull-right">
             <form name="form_search" id="form_search" method="get" action="{{ path('unites_search') }}">
@@ -46,7 +48,7 @@
           <div class="container">
               <div class="row">
                   <div class="col-md-12">
-                     <h1 style="text-align:center;">EMPORIO CERAMICS</h1>
+                     <a href="{{ path('homepage') }}" style="text-decoration: none; color: #6d6e71;"><h1 style="text-align:center;">EMPORIO CERAMICS</h1></a>
                   </div>
               </div>
           </div>

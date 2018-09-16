@@ -55,17 +55,6 @@ class OverviewController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $file = $overview->getLargeImage();
-            if (!empty($file)) {
-                $fileName = md5(uniqid()).'.'.$file->guessExtension();
-                $file->move(
-                 $this->container->getParameter('overview_directory'),
-                 $fileName
-             );
-            } else {
-                $fileName = 'media-img.png';
-            }
-            $overview->setLargeImage($fileName);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($overview);
@@ -102,31 +91,15 @@ class OverviewController extends Controller
     {
         $deleteForm = $this->createDeleteForm($overview);
         $editForm = $this->createForm(new OverviewType(), $overview);
-        $oldFile =  $overview->getLargeImage();
 
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $file =  $overview->getLargeImage();
-            $overview->setLargeImage($oldFile);
-            if (!empty($file)) {
-                if (file_exists($this->container->getParameter('overview_directory').'/'.$oldFile)) {
-                    unlink($this->container->getParameter('overview_directory').'/'.$oldFile);
-                }
-                $fileName = md5(uniqid()).'.'.$file->guessExtension();
-                $file->move(
-                   $this->container->getParameter('overview_directory'),
-                   $fileName
-               );
-                $overview->setLargeImage($fileName);
-            } else {
-                $overview->setLargeImage($oldFile);
-            }
             $em->persist($overview);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('overview_edit', array('id' =>  $overview->getId())));
+            return $this->redirect($this->generateUrl('overview_index'));
         }
 
         return $this->render('overview/edit.html.twig', array(
@@ -147,9 +120,6 @@ class OverviewController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            if (file_exists($this->container->getParameter('overview_directory').'/'.$overview->getLargeImage())) {
-                unlink($this->container->getParameter('overview_directory').'/'.$overview->getLargeImage());
-            }
             $em->remove($overview);
             $em->flush();
         }

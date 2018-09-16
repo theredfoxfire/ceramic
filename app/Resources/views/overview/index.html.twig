@@ -10,7 +10,6 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Largeimage</th>
                 <th>Createdat</th>
                 <th>Actions</th>
             </tr>
@@ -20,7 +19,6 @@
             {% for overview in pagination %}
             <tr>
                 <td><a href="{{ path('overview_show', { 'id': overview.id }) }}">{{ pagination.getPaginationData.firstItemNumber + loop.index - 1 }}</a></td>
-                <td><img src="{{ asset('web/uploads/overview/') }}{{ overview.largeImage }}" height="100" width="100"></td>
                 <td>{{ overview.overview | raw }}</td>
                 <td>
                     <a class="btn btn-small" href="{{ path('overview_edit', { 'id': overview.id }) }}">

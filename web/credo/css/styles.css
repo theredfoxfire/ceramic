@@ -188,6 +188,10 @@ body {
   color: #868686 !important;
   text-decoration: none !important;
 }
+.thumb-link {
+  color: #6d6e71;
+  text-decoration: none !important;
+}
 .list-bu-dw a:hover {
   color: #000 !important;
 }
@@ -228,6 +232,13 @@ body {
   font-size: 24px;
   width: 60%;
   margin: 0 auto;
+}
+.img-detail-bottom {
+  height: 700px;
+  margin-left: -5px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .img-home {
   height: 500px;
@@ -654,7 +665,7 @@ p {
 }
 .arrow-left {
   height: 90px;
-  width: auto; 
+  width: auto;
 }
 
 h4 {
