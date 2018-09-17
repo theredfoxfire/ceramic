@@ -303,7 +303,7 @@ class UnitesController extends Controller
         foreach ($sizes as $key => $value) {
             $orSize .= ' or a.size = :s'.$key.' ';
         }
-        $dql   = "SELECT a FROM AppBundle:Unites a where a.id > :c and (".$orColor.") and (".$orSize.")";
+        $dql   = "SELECT a FROM AppBundle:Unites a where a.category = :c and (".$orColor.") and (".$orSize.")";
         $query = $em->createQuery($dql);
         foreach ($colors as $key => $value) {
             $query->setParameter('c'.$key, $value);
@@ -311,7 +311,7 @@ class UnitesController extends Controller
         foreach ($sizes as $key => $value) {
             $query->setParameter('s'.$key, $value);
         }
-        $query->setParameter('c', 0);
+        $query->setParameter('c', $category);
         $query->setParameter('cl', $colors[0]);
         $query->setParameter('sz', $sizes[0]);
 
