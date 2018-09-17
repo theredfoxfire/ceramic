@@ -12,6 +12,10 @@ unites_search:
     path:     /unites/search
     defaults: { _controller: "AppBundle:Unites:search" }
     methods:  GET
+unites_filter:
+    path:     /unites/filter/{id}
+    defaults: { _controller: "AppBundle:Unites:filter" }
+    methods:  GET
 
 unites_show_public:
     path:     /unites/{id}/show

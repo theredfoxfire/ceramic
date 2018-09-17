@@ -98,4 +98,3 @@ class Yearnews
         return $this->monthnews;
     }
 }
-

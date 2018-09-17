@@ -15,7 +15,7 @@ AppBundle\Entity\Unites:
    type: text
   largeImage:
    type: string
-  webUrl:
+  price:
    type: string
    nullable: true
  oneToMany:
@@ -29,4 +29,16 @@ AppBundle\Entity\Unites:
    inversedBy: unites
    joinColumn:
     name: category_id
+    referencedColumnName: id
+  colour:
+   targetEntity: Colour
+   inversedBy: unites
+   joinColumn:
+    name: colour_id
+    referencedColumnName: id
+  size:
+   targetEntity: Size
+   inversedBy: unites
+   joinColumn:
+    name: size_id
     referencedColumnName: id

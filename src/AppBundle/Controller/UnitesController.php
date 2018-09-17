@@ -8,6 +8,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Unites;
 use AppBundle\Entity\Buimage;
 use AppBundle\Form\UnitesType;
+use AppBundle\Entity\Colour;
+use AppBundle\Entity\Size;
+use AppBundle\Entity\Category;
 
 /**
  * Unites controller.
@@ -173,8 +176,10 @@ class UnitesController extends Controller
             }
             $filePath = $this->container->getParameter('unites_directory').'/'.$oldFile;
             $fileName = $unite->getLargeImage();
-            if (file_exists($filePath) && !empty($fileName)) {
+            if (file_exists($filePath)) {
                 unlink($this->container->getParameter('unites_directory').'/'.$oldFile);
+            }
+            if (!empty($fileName)) {
                 $file = $unite->getLargeImage();
                 $fileName = md5(uniqid()).'.'.$file->guessExtension();
                 $file->move(
@@ -277,6 +282,54 @@ class UnitesController extends Controller
 
         return $this->render('unites/search.html.twig', array(
             'pagination' => $pagination,
+            'categories' => $this->get('app.services.getCategories')->getCategories(),
+        ));
+    }
+    /**
+    * Search Unites Action
+    * @param string
+    */
+    public function filterAction(Request $request, Category $category)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $colors = !empty($request->query->get('color')) ? $request->query->get('color') : [1000];
+        $sizes = !empty($request->query->get('size')) ? $request->query->get('size') : [1000];
+
+        $orColor = !empty($request->query->get('color')) ? ' a.colour = :cl ' : 'a.colour != :cl';
+        foreach ($colors as $key => $value) {
+            $orColor .= ' or a.colour = :c'.$key.' ';
+        }
+        $orSize = !empty($request->query->get('size')) ? ' a.size = :sz ' : 'a.size != :sz';
+        foreach ($sizes as $key => $value) {
+            $orSize .= ' or a.size = :s'.$key.' ';
+        }
+        $dql   = "SELECT a FROM AppBundle:Unites a where a.id > :c and (".$orColor.") and (".$orSize.")";
+        $query = $em->createQuery($dql);
+        foreach ($colors as $key => $value) {
+            $query->setParameter('c'.$key, $value);
+        }
+        foreach ($sizes as $key => $value) {
+            $query->setParameter('s'.$key, $value);
+        }
+        $query->setParameter('c', 0);
+        $query->setParameter('cl', $colors[0]);
+        $query->setParameter('sz', $sizes[0]);
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            10
+        );
+
+        $colors = $em->getRepository('AppBundle:Colour')->findAll();
+        $sizes = $em->getRepository('AppBundle:Size')->findAll();
+
+        return $this->render('category/showPublic.html.twig', array(
+            'pagination' => $pagination,
+            'category' => $category,
+            'sizes' => $sizes,
+            'colors' => $colors,
             'categories' => $this->get('app.services.getCategories')->getCategories(),
         ));
     }

@@ -1,0 +1,16 @@
+AppBundle\Entity\Colour:
+ type: entity
+ table: colour
+ repositoryClass: AppBundle\Repository\ColourRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  colour:
+   type: string
+ oneToMany:
+  unites:
+   targetEntity: Unites
+   orphanRemoval: true
+   mappedBy: colour

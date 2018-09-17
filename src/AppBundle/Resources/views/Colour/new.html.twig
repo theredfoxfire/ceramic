@@ -1,0 +1,15 @@
+{% extends 'baseAdmin.html.twig' %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{% block body -%}
+    <h1>Colour creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('admin_colour') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

@@ -8,6 +8,7 @@
 </div>
   <div class="container">
     <div class="col-md-3" style="padding-right: 30px;">
+      <form name="form_search" id="form_search" method="get" action="{{ path('unites_filter', {'id': category.id}) }}">
       <div class="row">
         <div style="display: flex; flex-direction: row; justify-content: space-between;align-items:center;">
           <div>
@@ -17,57 +18,11 @@
             <p style="font-size: 11px;">CLEAR</p>
           </div>
         </div>
+        {% for color in colors %}
         <div>
-          <input type="checkbox" name="color" value="animal-print"> Animal Print
+          <input type="checkbox" name="color[]" value="{{ color.id }}"> {{ color.colour }}
         </div>
-        <div>
-          <input type="checkbox" name="color" value="black"> Black
-        </div>
-        <div>
-          <input type="checkbox" name="color" value="blue"> Blue
-        </div>
-        <div>
-          <input type="checkbox" name="color" value="brown"> Brown
-        </div>
-        <div>
-          <input type="checkbox" name="color" value="burgundy"> Burgundy
-        </div>
-        <div>
-          <input type="checkbox" name="color" value="gold"> Gold
-        </div>
-        <div>
-          <input type="checkbox" name="color" value="gray"> Gray
-        </div>
-        <div>
-          <input type="checkbox" name="color" value="green"> Green
-        </div>
-        <div>
-          <input type="checkbox" name="color" value="metalic"> Metalic
-        </div>
-        <div>
-          <input type="checkbox" name="color" value="neutrals"> Neutrals
-        </div>
-        <div>
-          <input type="checkbox" name="color" value="orange"> Orange
-        </div>
-        <div>
-          <input type="checkbox" name="color" value="pink"> Pink
-        </div>
-        <div>
-          <input type="checkbox" name="color" value="purple"> Purple
-        </div>
-        <div>
-          <input type="checkbox" name="color" value="red"> Red
-        </div>
-        <div>
-          <input type="checkbox" name="color" value="silver"> Silver
-        </div>
-        <div>
-          <input type="checkbox" name="color" value="white"> White
-        </div>
-        <div>
-          <input type="checkbox" name="color" value="yellow"> Yellow
-        </div>
+        {% endfor %}
       </div>
       <hr/>
       <div class="row">
@@ -79,80 +34,38 @@
             <p style="font-size: 11px;">CLEAR</p>
           </div>
         </div>
-        <div class="col-xs-6">
-          <div>
-            <input type="checkbox" name="size" value="20"> 20
-          </div>
-          <div>
-            <input type="checkbox" name="size" value="30"> 30
-          </div>
-          <div>
-            <input type="checkbox" name="size" value="40"> 40
-          </div>
-          <div>
-            <input type="checkbox" name="size" value="50"> 50
-          </div>
+        {% for size in sizes %}
+        <div>
+          <input type="checkbox" name="size[]" value="{{ size.id }}"> {{ size.size }}
         </div>
-        <div class="col-xs-6">
-          <div>
-            <input type="checkbox" name="size" value="20"> 20
-          </div>
-          <div>
-            <input type="checkbox" name="size" value="30"> 30
-          </div>
-          <div>
-            <input type="checkbox" name="size" value="40"> 40
-          </div>
-          <div>
-            <input type="checkbox" name="size" value="50"> 50
-          </div>
-        </div>
+        {% endfor %}
       </div>
-      <div style="padding-top: 40px;display:flex;justify-content: center;">
+      <hr/>
+      <div style="padding-top: 40px;padding-bottom: 50px;display:flex;justify-content: center;">
         <button type="submit" class="btn btn-warning">FILTER</button>
       </div>
+      </form>
     </div>
     <div class="col-md-9">
-      {% for n in [1,2,3,4] %}
-        <div class="row" style="padding-bottom: 30px;">
-          <a href="{{ path('unites_show_public', { 'id': 2 }) }}" class="thumb-link">
+      <div class="row" style="padding-bottom: 30px;">
+      {% for unite in pagination %}
             <div class="col-md-4">
-              <img src="{{ asset('web/credo/img/thumb1.png') }}" alt="">
-              <div style="width: 70%; text-align: center;">
-                <p>
-                  LOREM IPSUM DOLOR<br>
-                  Lorem ipsum dolor sit amet, consectetuer<br>
-                  IDR 120.000
-                </p>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="{{ path('unites_show_public', { 'id': 2 }) }}" class="thumb-link">
-              <img src="{{ asset('web/credo/img/thumb2.png') }}" alt="">
-              <div style="width: 70%; text-align: center;">
-                <p>
-                  LOREM IPSUM DOLOR<br>
-                  Lorem ipsum dolor sit amet, consectetuer<br>
-                  IDR 120.000
-                </p>
+              <a href="{{ path('unites_show_public', { 'id': 2 }) }}" class="thumb-link">
+                <div style="display: flex; justify-content: center;"><img src="{{ asset('web/uploads/unites/') }}{{ unite.largeImage }}" alt="" style="width: auto; height: 150px;"></div>
+                <div style="display: flex; justify-content: center;">
+                  <div style="width: 70%; text-align: center;">
+                    <p>
+                      <b>{{ unite.title }}</b><br>
+                      {{ unite.subtitle }}<br>
+                      <b>IDR {{ unite.price | number_format(2, ',', '.')}}</b>
+                    </p>
+                  </div>
+                </div>
               </a>
-            </div>
           </div>
-          <div class="col-md-4">
-            <a href="{{ path('unites_show_public', { 'id': 2 }) }}" class="thumb-link">
-              <img src="{{ asset('web/credo/img/thumb3.png') }}" alt="">
-              <div style="width: 70%; text-align: center;">
-                <p>
-                  LOREM IPSUM DOLOR<br>
-                  Lorem ipsum dolor sit amet, consectetuer<br>
-                  IDR 120.000
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
       {% endfor %}
+      </div>
+      {{ knp_pagination_render(pagination) }}
     </div>
   </div>
 {% endblock %}

@@ -1,0 +1,30 @@
+admin_size:
+    path:     /
+    defaults: { _controller: "AppBundle:Size:index" }
+
+admin_size_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Size:show" }
+
+admin_size_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Size:new" }
+
+admin_size_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Size:create" }
+    methods:  POST
+
+admin_size_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Size:edit" }
+
+admin_size_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Size:update" }
+    methods:  [POST, PUT]
+
+admin_size_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Size:delete" }
+    methods:  [POST, DELETE]

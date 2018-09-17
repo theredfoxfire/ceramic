@@ -1,16 +1,16 @@
 {% extends 'baseAdmin.html.twig' %}
 
 {% block body %}
-    <h1>Business Unites</h1>
+    <h1>Products</h1>
     {{ knp_pagination_render(pagination) }}
-    <a class="pull-right btn btn-small" href="{{ path('unites_new') }}"><i class="fa fa-plus-square-o"></i>&nbsp;Create a new Business Unit</a><br /><br />
+    <a class="pull-right btn btn-small" href="{{ path('unites_new') }}"><i class="fa fa-plus-square-o"></i>&nbsp;Create a new Product</a><br /><br />
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
                 <th>About</th>
-                <th width="100">Actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
 
@@ -18,10 +18,10 @@
 
           {% for unite in pagination %}
               <tr>
-                  <td>{{ pagination.getPaginationData.firstItemNumber + loop.index - 1 }}</td>
-                  <td><a href="{{ path('unites_show', { 'id': unite.id }) }}">{{ unite.title }}</a></td>
-                  <td>{{ unite.story | raw }}</td>
-                  <td>
+                  <td style="width: 10%;">{{ pagination.getPaginationData.firstItemNumber + loop.index - 1 }}</td>
+                  <td style="width: 30%;"><a href="{{ path('unites_show', { 'id': unite.id }) }}">{{ unite.title }}</a></td>
+                  <td style="width: 30%;">{{ unite.story | raw }}</td>
+                  <td style="width: 20%;">
                       <a class="btn btn-small" href="{{ path('unites_edit', { 'id': unite.id }) }}">
                         <button type="submit" class="btn btn-small">
                           <i class="fa fa-pencil-square-o "></i>

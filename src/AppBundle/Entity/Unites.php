@@ -27,7 +27,7 @@ class Unites
     /**
      * @var string
      * @Assert\Image(
-     * maxSize = "7500k"
+     * maxSize = "7524k"
      * )
      *
      */
@@ -247,5 +247,89 @@ class Unites
     public function getWebUrl()
     {
         return $this->webUrl;
+    }
+    /**
+     * @var string
+     */
+    private $price;
+
+    /**
+     * @var \AppBundle\Entity\Colour
+     */
+    private $colour;
+
+    /**
+     * @var \AppBundle\Entity\Size
+     */
+    private $size;
+
+
+    /**
+     * Set price
+     *
+     * @param string $price
+     * @return Unites
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return string
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * Set colour
+     *
+     * @param \AppBundle\Entity\Colour $colour
+     * @return Unites
+     */
+    public function setColour(\AppBundle\Entity\Colour $colour = null)
+    {
+        $this->colour = $colour;
+
+        return $this;
+    }
+
+    /**
+     * Get colour
+     *
+     * @return \AppBundle\Entity\Colour
+     */
+    public function getColour()
+    {
+        return $this->colour;
+    }
+
+    /**
+     * Set size
+     *
+     * @param \AppBundle\Entity\Size $size
+     * @return Unites
+     */
+    public function setSize(\AppBundle\Entity\Size $size = null)
+    {
+        $this->size = $size;
+
+        return $this;
+    }
+
+    /**
+     * Get size
+     *
+     * @return \AppBundle\Entity\Size
+     */
+    public function getSize()
+    {
+        return $this->size;
     }
 }

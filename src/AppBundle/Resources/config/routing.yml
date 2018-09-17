@@ -1,3 +1,11 @@
+app_admin_size:
+    resource: "@AppBundle/Resources/config/routing/size.yml"
+    prefix:   /admin/size
+
+app_admin_colour:
+    resource: "@AppBundle/Resources/config/routing/colour.yml"
+    prefix:   /admin/colour
+
 app_year:
     resource: "@AppBundle/Resources/config/routing/year.yml"
     prefix:   /year

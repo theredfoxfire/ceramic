@@ -17,14 +17,16 @@ class UnitesType extends AbstractType
         $builder
             ->add('title', null, array('label' => 'Name'))
             ->add('subtitle', null, array('label' => 'Sub name'))
-            ->add('category', null, array('empty_data' => '-- Please select business category --', 'attr' => array('placeholder' => 'Please select business category')))
+            ->add('category', null, array('empty_data' => '-- Please select category --', 'attr' => array('placeholder' => 'Please select category')))
+            ->add('colour', null, array('empty_data' => '-- Please select colour --', 'attr' => array('placeholder' => 'Please select colour')))
+            ->add('size', null, array('empty_data' => '-- Please select size --', 'attr' => array('placeholder' => 'Please select size')))
             ->add('story', 'textarea', array(
-                'label' => 'Short Story',
+                'label' => 'Deskripsi',
                 'required' => false,
                 'attr' => array('class' => 'tinymce', 'rows' => '15'),
             ))
-            ->add('largeImage', 'file', array('required' => false, 'label' => 'Foto (image file, best fit width 1280px x height 793px Max size 2MB) ', 'data' => null))
-            ->add('webUrl', null, array('required' => false, 'label' => 'Website Address'))
+            ->add('largeImage', 'file', array('required' => false, 'label' => 'Gambar Utama (image file, best fit 400x400) ', 'data' => null))
+            ->add('price', null, array('required' => false, 'label' => 'Harga'))
         ;
     }
 

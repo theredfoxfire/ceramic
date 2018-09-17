@@ -35,21 +35,21 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><a href="{{ path('adminHomepage') }}">Home</a></li>
+              <li>
+                <a href="{{ path('unites_index') }}">Products</a>
+              </li>
               <li><a href="{{ path('contactus_index') }}">Contact Us</a></li>
-              <li><a href="{{ path('aboutus_index') }}">About Us</a></li>
+              <li><a href="{{ path('admin_colour') }}">Colour</a></li>
+              <li><a href="{{ path('admin_size') }}">Size</a></li>
               <li>
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Others...</b></a>
                 <ul class="dropdown-menu">
                   <li>
                     <a href="{{ path('slide_index') }}">Home Slides Show</a>
                   </li>
-                  <li>
-                    <a href="{{ path('logo_index') }}">Logo Business Units</a>
-                  </li>
-                  <li><a href="{{ path('video_index') }}">Landing GIF Video</a></li>
                   <li><a href="{{ path('quote_index') }}">Home Quotes</a></li>
                   <li><a href="{{ path('overview_index') }}">Contact Us Overview</a></li>
-                  <li><a href="{{ path('category_index') }}">Business Category</a></li>
+                  <li><a href="{{ path('category_index') }}">Product Category</a></li>
                   <li><a href="{{ path('users_index') }}">Users Management</a></li>
                 </ul>
               </li>

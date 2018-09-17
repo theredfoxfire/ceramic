@@ -1,0 +1,16 @@
+AppBundle\Entity\Size:
+ type: entity
+ table: size
+ repositoryClass: AppBundle\Repository\SizeRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  size:
+   type: string
+ oneToMany:
+  unites:
+   targetEntity: Unites
+   orphanRemoval: true
+   mappedBy: size

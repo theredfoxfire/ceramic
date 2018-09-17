@@ -33,24 +33,6 @@ class OverviewType extends AbstractType
                   'placeholder' => 'MESSAGE'
                 ),
             ))
-            // ->add('longitude', 'text', array(
-            //     'label' => 'Google Map Longitude',
-            //     'required' => false,
-            //     'attr' => array(
-            //       'class' => 'form-control',
-            //       'rows' => '6',
-            //       'placeholder' => 'longitude'
-            //     ),
-            // ))
-            // ->add('latitude', 'text', array(
-            //     'label' => 'Google Map Latitude',
-            //     'required' => false,
-            //     'attr' => array(
-            //       'class' => 'form-control',
-            //       'rows' => '6',
-            //       'placeholder' => 'latitude'
-            //     ),
-            // ))
         ;
     }
 

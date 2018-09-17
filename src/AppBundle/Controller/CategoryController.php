@@ -6,6 +6,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use AppBundle\Entity\Category;
+use AppBundle\Entity\Unites;
+use AppBundle\Entity\Colour;
+use AppBundle\Entity\Size;
 use AppBundle\Form\CategoryType;
 
 /**
@@ -85,10 +88,27 @@ class CategoryController extends Controller
      * Finds and displays a Category entity.
      *
      */
-    public function showPublicAction(Category $category)
+    public function showPublicAction(Request $request, Category $category)
     {
+        $em = $this->getDoctrine()->getManager();
+        $dql   = "SELECT a FROM AppBundle:Unites a where a.category = :c";
+        $query = $em->createQuery($dql);
+        $query->setParameter('c', $category);
+        $colors = $em->getRepository('AppBundle:Colour')->findAll();
+        $sizes = $em->getRepository('AppBundle:Size')->findAll();
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            10
+        );
+
         return $this->render('category/showPublic.html.twig', array(
+            'pagination' => $pagination,
             'category' => $category,
+            'sizes' => $sizes,
+            'colors' => $colors,
             'categories' => $this->get('app.services.getCategories')->getCategories(),
         ));
     }
