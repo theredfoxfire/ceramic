@@ -4,10 +4,14 @@
 
 <!-- /.container -->
 <section id="career-home">
-  <div class="col-md-6 img-home" style="background-image: url({{ asset('web/credo/img/home1.png') }});"></div>
+  <div class="col-md-6 img-home hidden-xs" style="background-image: url({{ asset('web/credo/img/home1.png') }});"></div>
+  <div class="col-md-6 img-home visible-xs" style="background-image: url({{ asset('web/credo/img/home1.png') }}); height: 250px;">
+  </div>
   <div class="col-md-6 text-box">
-    <p class="tag-line">FASHION <br>DESIGN <br>AND <br>LIFESTYLE</p>
-    <div style="display:flex; flex-direction: row;">
+    <div class="row">
+      <p class="tag-line">FASHION <br>DESIGN <br>AND <br>LIFESTYLE</p>
+    </div>
+    <div style="display:flex; flex-direction: row;" class="row">
       <div class="img-thumb-ceramic" style="background-image: url({{ asset('web/credo/img/thumb1.png') }});"></div>
       <div class="img-thumb-ceramic" style="background-image: url({{ asset('web/credo/img/thumb2.png') }});"></div>
       <div class="img-thumb-ceramic" style="background-image: url({{ asset('web/credo/img/thumb3.png') }});"></div>
@@ -16,19 +20,22 @@
 </section>
 <section id="business-units">
   <div class="col-md-6 text-box">
-    <p class="tag-line2">FASHION <br>DESIGN <br>AND <br>LIFESTYLE</p>
-    <div style="display:flex; flex-direction: row;">
+    <div class="row">
+      <p class="tag-line2">FASHION <br>DESIGN <br>AND <br>LIFESTYLE</p>
+    </div>
+    <div style="display:flex; flex-direction: row;" class="row">
       <div class="img-thumb-ceramic" style="background-image: url({{ asset('web/credo/img/thumb4.png') }});"></div>
     </div>
   </div>
-  <div class="col-md-6 img-home2" style="background-image: url({{ asset('web/credo/img/home2.png') }});"></div>
+  <div class="col-md-6 img-home2 hidden-xs" style="background-image: url({{ asset('web/credo/img/home2.png') }});"></div>
+  <div class="col-md-6 img-home2 visible-xs" style="background-image: url({{ asset('web/credo/img/home2.png') }});margin-top: 20px;height: 300px;"></div>
 </section>
 <section class="about-us-home">
   <p class="title-about">OUR STORY</p>
   <p class="content-about">by Siroai</ap>
   <p class="sub-title-about">Unde omnis iste natus error sit voluptatem</p>
   <p class="content-about">
-    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
   </p>
 </section>
 <section class="home-business">
@@ -72,31 +79,35 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <div>
+            <div style="padding-bottom: 60px;">
               <p class="title-init">DESIGNER RINGS</p>
-              <p class="title-init" style="margin-top: 80px;">
+              <p class="title-init hidden-xs" style="margin-top: 80px;">
+                THE
+              </p>
+              <p class="title-init visible-xs" style="margin-top: 20px;">
                 THE
               </p>
               <p class="title-designer">CERAMICS RINGS</p>
               <p class="content-designer">Exclusively at Jxxxxx</p>
               <p class="content-designer">lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ut wisi enim ad minim veniam,
-                quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
               </p>
             </div>
         </div>
         {% for image in [1,2,3] %}
             <div class="item">
-                <div>
+                <div style="padding-bottom: 60px;">
                   <p class="title-init">DESIGNER RINGS</p>
-                  <p class="title-init" style="margin-top: 80px;">
+                  <p class="title-init hidden-xs" style="margin-top: 80px;">
+                    THE
+                  </p>
+                  <p class="title-init visible-xs" style="margin-top: 20px;">
                     THE
                   </p>
                   <p class="title-designer">CERAMICS RINGS</p>
                   <p class="content-designer">Exclusively at Jxxxxx</p>
                   <p class="content-designer">lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ut wisi enim ad minim veniam,
-                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
                   </p>
                 </div>
             </div>
@@ -123,9 +134,9 @@
       </ol>
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox" style="background-color: #f4f3f0;">
-        <div class="item active">
+        <div class="item active" style="padding-bottom:40px;">
             <div class="col-md-2"></div>
-            <div class="col-md-4" style="display:flex;justify-content:center;align-items:center;height:700px;">
+            <div class="col-md-4 carousel-item">
               <img src="{{ asset('web/credo/img/home3.png') }}">
             </div>
             <div class="col-md-4">
@@ -137,15 +148,14 @@
               <p class="content-jewelry">Exclusively at Jxxxxx</p>
               <p class="content-jewelry">lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
                 euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ut wisi enim ad minim veniam,
-                quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
               </p>
             </div>
             <div class="col-md-2"></div>
         </div>
         {% for image in [1,2,3] %}
-            <div class="item">
+            <div class="item" style="padding-bottom:40px;">
               <div class="col-md-2"></div>
-              <div class="col-md-4" style="display:flex;justify-content:center;align-items:center;height:700px;">
+              <div class="col-md-4  carousel-item">
                 <img src="{{ asset('web/credo/img/home3.png') }}">
               </div>
               <div class="col-md-4">
@@ -157,7 +167,6 @@
                 <p class="content-jewelry">Exclusively at Jxxxxx</p>
                 <p class="content-jewelry">lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
                   euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ut wisi enim ad minim veniam,
-                  quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
                 </p>
               </div>
               <div class="col-md-2"></div>
@@ -195,11 +204,10 @@
               <p class="title-jewelry">CERAMICS RINGS</p>
               <p class="content-jewelry">Exclusively at Jxxxxx</p>
               <p class="content-jewelry">lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ut wisi enim ad minim veniam,
-                quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ut wisi enim ad minim veniam
               </p>
             </div>
-            <div class="col-md-4" style="display:flex;justify-content:center;align-items:center;height:700px;">
+            <div class="col-md-4  carousel-item" >
               <img src="{{ asset('web/credo/img/home4.png') }}">
             </div>
             <div class="col-md-2"></div>
@@ -219,7 +227,7 @@
                   quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
                 </p>
               </div>
-              <div class="col-md-4" style="display:flex;justify-content:center;align-items:center;height:700px;">
+              <div class="col-md-4 carousel-item">
                 <img src="{{ asset('web/credo/img/home3.png') }}">
               </div>
               <div class="col-md-2"></div>

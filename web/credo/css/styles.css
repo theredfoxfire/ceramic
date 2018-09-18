@@ -279,6 +279,28 @@ input.txtsearch {
     border-color: #000;
 }
 @media (max-width: 800px) {
+  #career-home {
+    padding-top: 10px !important;
+  }
+  .tag-line2 {
+    font-size: 20px !important;
+  }
+  .carousel-item {
+   height: 400px !important;
+  }
+  .content-jewelry {
+    width: 90% !important;
+  }
+  .content-designer {
+    width: 90% !important;
+  }
+  #business-units {
+    padding-top: 10px !important;
+    padding-left: 0 !important;
+  }
+  .img-home {
+    margin-top: 0 !important;
+  }
   .arrow-big {
     display: none;
   }
@@ -356,8 +378,11 @@ input.txtsearch {
     background: #fff;
 }
 .carousel-inner {
-  height: 700px;
+  height: 550px;
   background-color: #000;
+}
+.carousel-item {
+  display:flex;justify-content:center;align-items:center;height:700px;
 }
 #site-header .site-navbar {
     height: 60px;
