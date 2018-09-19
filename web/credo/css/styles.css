@@ -279,6 +279,9 @@ input.txtsearch {
     border-color: #000;
 }
 @media (max-width: 800px) {
+  .img-detail {
+    height: 200px!important;
+  }
   .content-unite {
     height: 220px!important;
     padding-bottom: 20px;
@@ -294,6 +297,9 @@ input.txtsearch {
   }
   .content-unite {
     display:flex; align-items: flex-end;height: 400px;
+  }
+  .img-detail {
+    width: auto; height: 400px;
   }
   .content-jewelry p {
     width: 90% !important;
