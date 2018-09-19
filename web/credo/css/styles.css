@@ -37,7 +37,9 @@ body {
 .arrow-link {
   color: #000;
 }
-
+.img-show-detail {
+  width: auto; height: 300px !important;
+}
 .about-us-home {
   background-color: #fff;
   height: 500px;
@@ -280,7 +282,7 @@ input.txtsearch {
     border-color: #000;
 }
 @media (max-width: 800px) {
-  .img-detail {
+  .img-show-detail {
     height: 200px!important;
   }
   .content-unite {
@@ -298,9 +300,6 @@ input.txtsearch {
   }
   .content-unite {
     display:flex; align-items: flex-end;height: 400px;
-  }
-  .img-detail {
-    width: auto; height: 400px;
   }
   .content-jewelry p {
     width: 90% !important;

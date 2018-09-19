@@ -269,7 +269,7 @@ class UnitesController extends Controller
         $searchTerm = $request->query->get('search');
 
         $em = $this->getDoctrine()->getManager();
-        $dql   = "SELECT a FROM AppBundle:Unites a where a.story like '%{$searchTerm}%'";
+        $dql   = "SELECT a FROM AppBundle:Unites a where a.story like '%{$searchTerm}%' or a.title like '%{$searchTerm}%'";
         $query = $em->createQuery($dql);
 
         $paginator  = $this->get('knp_paginator');
