@@ -69,13 +69,13 @@ class SubscribeController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('homepage'));
+            return $this->render('AppBundle:Subscribe:success.html.twig', array(
+                'entity' => $entity,
+                'categories' => $this->get('app.services.getCategories')->getCategories(),
+            ));
         }
 
-        return $this->render('AppBundle:Default:index.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
+        return $this->redirect($this->generateUrl('homepage'));
     }
 
     /**

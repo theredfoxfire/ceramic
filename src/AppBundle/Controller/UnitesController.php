@@ -176,10 +176,10 @@ class UnitesController extends Controller
             }
             $filePath = $this->container->getParameter('unites_directory').'/'.$oldFile;
             $fileName = $unite->getLargeImage();
-            if (file_exists($filePath)) {
-                unlink($this->container->getParameter('unites_directory').'/'.$oldFile);
-            }
             if (!empty($fileName)) {
+                if (file_exists($filePath)) {
+                  unlink($this->container->getParameter('unites_directory').'/'.$oldFile);
+                }
                 $file = $unite->getLargeImage();
                 $fileName = md5(uniqid()).'.'.$file->guessExtension();
                 $file->move(
