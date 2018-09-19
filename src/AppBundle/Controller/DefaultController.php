@@ -39,11 +39,17 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $unites = $em->getRepository('AppBundle:Unites')->findBy(array(), array('id' => 'ASC'), 12);
+        $product1 = $em->getRepository('AppBundle:Unites')->findBy(array(), array('id' => 'DESC'), 4);
+        $product2 = $em->getRepository('AppBundle:Unites')->findBy(array(), array('id' => 'ASC'), 4);
+        $product3 = $em->getRepository('AppBundle:Unites')->findBy(array(), array('title' => 'DESC'), 4);
         $qtitle = $em->getRepository('AppBundle:Quote')->findBy(array('id' => 2));
         $qconten = $em->getRepository('AppBundle:Quote')->findBy(array('id' => 1));
         return $this->render('default/index.html.twig', array(
              'unites' => $unites,
              'qtitle' => $qtitle,
+             'product1' => $product1,
+             'product2' => $product2,
+             'product3' => $product3,
              'qconten' => $qconten,
              'categories' => $this->get('app.services.getCategories')->getCategories(),
          ));

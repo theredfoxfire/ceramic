@@ -60,42 +60,29 @@
       <!-- Indicators -->
       <ol class="carousel-indicators">
           <li data-target="#carousel" data-slide-to="0" class="active"></li>
-          {% for image in [1,2,3] %}
+          {% for image in product1 %}
               <li data-target="#carousel" data-slide-to="{{ loop.index }}"></li>
           {% endfor %}
       </ol>
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <div style="padding-bottom: 60px;">
-              <p class="title-init">DESIGNER RINGS</p>
-              <p class="title-init hidden-xs" style="margin-top: 80px;">
-                THE
-              </p>
-              <p class="title-init visible-xs" style="margin-top: 20px;">
-                THE
-              </p>
-              <p class="title-designer">CERAMICS RINGS</p>
-              <p class="content-designer">Exclusively at Jxxxxx</p>
-              <p class="content-designer">lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-              </p>
-            </div>
-        </div>
-        {% for image in [1,2,3] %}
-            <div class="item">
+        {% for image in product1 %}
+            {% if loop.index == 1 %}
+              <div class="item active">
+            {% else %}
+              <div class="item">
+            {% endif %}
                 <div style="padding-bottom: 60px;">
-                  <p class="title-init">DESIGNER RINGS</p>
+                  <p class="title-init">{{ image.category.category }}</p>
                   <p class="title-init hidden-xs" style="margin-top: 80px;">
                     THE
                   </p>
                   <p class="title-init visible-xs" style="margin-top: 20px;">
                     THE
                   </p>
-                  <p class="title-designer">CERAMICS RINGS</p>
+                  <p class="title-designer">{{ image.title }}</p>
                   <p class="content-designer">Exclusively at Jxxxxx</p>
-                  <p class="content-designer">lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                  <p class="content-designer">{{ image.story | raw }}
                   </p>
                 </div>
             </div>
@@ -116,46 +103,31 @@
       <!-- Indicators -->
       <ol class="carousel-indicators">
           <li data-target="#carousel" data-slide-to="0" class="active"></li>
-          {% for image in [1,2,3] %}
+          {% for image in product2 %}
               <li data-target="#carousel" data-slide-to="{{ loop.index }}"></li>
           {% endfor %}
       </ol>
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox" style="background-color: #f4f3f0;">
-        <div class="item active" style="padding-bottom:40px;">
-            <div class="col-md-2"></div>
-            <div class="col-md-4 carousel-item">
-              <img src="{{ asset('web/credo/img/home3.png') }}">
-            </div>
-            <div class="col-md-4">
-              <p class="title-init-jewelry">DESIGNER RINGS</p>
-              <p class="title-init-jewelry" style="margin-top: 80px;">
-                THE
-              </p>
-              <p class="title-jewelry">CERAMICS RINGS</p>
-              <p class="content-jewelry">Exclusively at Jxxxxx</p>
-              <p class="content-jewelry">lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ut wisi enim ad minim veniam,
-              </p>
-            </div>
-            <div class="col-md-2"></div>
-        </div>
-        {% for image in [1,2,3] %}
-            <div class="item" style="padding-bottom:40px;">
+        {% for image in product2 %}
+            {% if loop.index == 1 %}
+              <div class="item active" style="padding-bottom:40px;">
+            {% else %}
+              <div class="item" style="padding-bottom:40px;">
+            {% endif %}
               <div class="col-md-2"></div>
-              <div class="col-md-4  carousel-item">
-                <img src="{{ asset('web/credo/img/home3.png') }}">
+              <div class="col-md-4 carousel-item">
+                <img src="{{ asset('web/uploads/unites/') }}{{ image.largeImage }}" style="height: 50%; width:auto;">
               </div>
               <div class="col-md-4">
-                <p class="title-init-jewelry">DESIGNER RINGS</p>
+                <p class="title-init-jewelry">{{ image.category.category }}</p>
                 <p class="title-init-jewelry" style="margin-top: 80px;">
                   THE
                 </p>
-                <p class="title-jewelry">CERAMICS RINGS</p>
-                <p class="content-jewelry">Exclusively at Jxxxxx</p>
-                <p class="content-jewelry">lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                  euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ut wisi enim ad minim veniam,
-                </p>
+                <p class="title-jewelry">{{ image.title }}</p>
+                <div class="content-jewelry"><p>Exclusively at Jxxxxx</p></div>
+                <div class="content-jewelry">{{ image.story | raw }}
+                </div>
               </div>
               <div class="col-md-2"></div>
             </div>
@@ -176,47 +148,31 @@
       <!-- Indicators -->
       <ol class="carousel-indicators">
           <li data-target="#carousel" data-slide-to="0" class="active"></li>
-          {% for image in [1,2,3] %}
+          {% for image in product3 %}
               <li data-target="#carousel" data-slide-to="{{ loop.index }}"></li>
           {% endfor %}
       </ol>
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox" style="background-color: #dfd9d4;">
-        <div class="item active">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-              <p class="title-init-jewelry">DESIGNER RINGS</p>
-              <p class="title-init-jewelry" style="margin-top: 80px;">
-                THE
-              </p>
-              <p class="title-jewelry">CERAMICS RINGS</p>
-              <p class="content-jewelry">Exclusively at Jxxxxx</p>
-              <p class="content-jewelry">lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ut wisi enim ad minim veniam
-              </p>
-            </div>
-            <div class="col-md-4  carousel-item" >
-              <img src="{{ asset('web/credo/img/home4.png') }}">
-            </div>
-            <div class="col-md-2"></div>
-        </div>
-        {% for image in [1,2,3] %}
-            <div class="item">
+        {% for image in product3 %}
+              {% if loop.index == 1 %}
+                <div class="item active">
+              {% else %}
+                <div class="item">
+              {% endif %}
               <div class="col-md-2"></div>
               <div class="col-md-4">
-                <p class="title-init-jewelry">DESIGNER RINGS</p>
+                <p class="title-init-jewelry">{{ image.category.category }}</p>
                 <p class="title-init-jewelry" style="margin-top: 80px;">
                   THE
                 </p>
-                <p class="title-jewelry">CERAMICS RINGS</p>
-                <p class="content-jewelry">Exclusively at Jxxxxx</p>
-                <p class="content-jewelry">lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                  euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ut wisi enim ad minim veniam,
-                  quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-                </p>
+                <p class="title-jewelry">{{ image.title }}</p>
+                <div class="content-jewelry"><p>Exclusively at Jxxxxx</p></div>
+                <div class="content-jewelry">{{ image.story | raw }}
+                </div>
               </div>
               <div class="col-md-4 carousel-item">
-                <img src="{{ asset('web/credo/img/home3.png') }}">
+                <img src="{{ asset('web/uploads/unites/') }}{{ image.largeImage }}" style="height: 50%; width:auto;">
               </div>
               <div class="col-md-2"></div>
             </div>
@@ -236,7 +192,7 @@
   <div>
     <form method="get" action="{{ path('public_subscribe') }}">
     <h3 style="text-align: center;margin-top:100px;">Stay Inspired</h3>
-    <p class="content-jewelry">sign up our newsletter to receive the latest news & exclusive events</p>
+    <div class="content-jewelry"><p>sign up our newsletter to receive the latest news & exclusive events</p></div>
     <div style="display:flex;justify-content:center;margin-bottom:50px;">
       <input type="text" name="email" placeholder="Your Email" style="border:none;border-bottom: solid 2px #dfd9d4; width: 600px;height: 30px;margin-top: 100px;text-align:center;font-size:18px;">
     </div>

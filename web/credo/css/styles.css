@@ -107,7 +107,7 @@ body {
   width: 30%;
   line-height: 28px;
 }
-.content-jewelry {
+.content-jewelry p {
   margin: 0 auto;
   font-size: 14px;
   color: #000;
@@ -288,7 +288,7 @@ input.txtsearch {
   .carousel-item {
    height: 400px !important;
   }
-  .content-jewelry {
+  .content-jewelry p {
     width: 90% !important;
   }
   .content-designer {
