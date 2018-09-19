@@ -279,6 +279,10 @@ input.txtsearch {
     border-color: #000;
 }
 @media (max-width: 800px) {
+  .content-unite {
+    height: 220px!important;
+    padding-bottom: 20px;
+  }
   #career-home {
     padding-top: 10px !important;
   }
@@ -287,6 +291,9 @@ input.txtsearch {
   }
   .carousel-item {
    height: 400px !important;
+  }
+  .content-unite {
+    display:flex; align-items: flex-end;height: 400px;
   }
   .content-jewelry p {
     width: 90% !important;
