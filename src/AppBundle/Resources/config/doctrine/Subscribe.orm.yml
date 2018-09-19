@@ -1,0 +1,11 @@
+AppBundle\Entity\Subscribe:
+ type: entity
+ table: subscribe
+ repositoryClass: AppBundle\Repository\SubscribeRepository
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  email:
+   type: string

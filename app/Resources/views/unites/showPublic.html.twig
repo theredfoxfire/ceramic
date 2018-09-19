@@ -4,7 +4,7 @@
 
 <!-- /.container -->
   <div style="padding-top: 30px;padding-bottom: 20px;padding-left: 30px;">
-    <p class="tag-line2" style="text-align:left;">FASHION RINGS</p>
+    <p class="tag-line2" style="text-align:left;">{{ unite.category.category }}</p>
   </div>
   <div class="container">
     <div class="col-md-6" style="padding: 30px;display:flex; justify-content:center; align-items: center;">
@@ -12,16 +12,16 @@
     </div>
     <div class="col-md-6" style="display:flex; align-items: flex-end;height: 400px;">
       <div>
-        <h4>EMILE</h4>
-        <p><b>LOREM IPSUM DOLOR SIT AMET</b></p>
+        <h4>{{ unite.title }}</h4>
+        <p><b>{{ unite.subtitle }}</b></p>
         <p style="width: 40%;">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus morbi ut mie. Lorem ipsum dolor sit amet.
+          {{ unite.story | raw }}
         </p>
-        <p><b>IDR 100.800</b></p>
+        <p><b>IDR {{ unite.price | number_format(2, ',', '.') }}</b></p>
         <div style="display:flex; flex-direction: row;">
-          <div class="img-thumb-ceramic" style="background-image: url({{ asset('web/credo/img/thumb1.png') }});"></div>
-          <div class="img-thumb-ceramic" style="background-image: url({{ asset('web/credo/img/thumb2.png') }});"></div>
-          <div class="img-thumb-ceramic" style="background-image: url({{ asset('web/credo/img/thumb3.png') }});"></div>
+          {% for item in unite.unitesimage %}
+            <div class="img-thumb-ceramic" style="background-image: url({{ asset('web/uploads/buimage/') }}{{ item.largeImage }});"></div>
+          {% endfor %}
         </div>
       </div>
     </div>

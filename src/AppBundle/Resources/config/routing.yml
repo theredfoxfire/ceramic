@@ -1,3 +1,7 @@
+app_admin_subscribe:
+    resource: "@AppBundle/Resources/config/routing/subscribe.yml"
+    prefix:   /admin/subscribe
+
 app_admin_size:
     resource: "@AppBundle/Resources/config/routing/size.yml"
     prefix:   /admin/size

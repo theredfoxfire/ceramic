@@ -1,0 +1,30 @@
+admin_subscribe:
+    path:     /
+    defaults: { _controller: "AppBundle:Subscribe:index" }
+
+admin_subscribe_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Subscribe:show" }
+
+admin_subscribe_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Subscribe:new" }
+
+admin_subscribe_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Subscribe:create" }
+    methods:  POST
+
+admin_subscribe_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Subscribe:edit" }
+
+admin_subscribe_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Subscribe:update" }
+    methods:  [POST, PUT]
+
+admin_subscribe_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Subscribe:delete" }
+    methods:  [POST, DELETE]

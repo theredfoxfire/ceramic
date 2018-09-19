@@ -50,7 +50,7 @@
       <div class="row" style="padding-bottom: 30px;">
       {% for unite in pagination %}
             <div class="col-md-4">
-              <a href="{{ path('unites_show_public', { 'id': 2 }) }}" class="thumb-link">
+              <a href="{{ path('unites_show_public', { 'id': unite.id }) }}" class="thumb-link">
                 <div style="display: flex; justify-content: center;"><img src="{{ asset('web/uploads/unites/') }}{{ unite.largeImage }}" alt="" style="width: auto; height: 150px;"></div>
                 <div style="display: flex; justify-content: center;">
                   <div style="width: 70%; text-align: center;">
